@@ -30,7 +30,7 @@
         <!-- <button class="but1 buttonSec1"></button>
         <button class="but2 buttonSec1"></button> -->
       </div>
-      <div class="ContentdivSection1 flexRowDisplaysbc">
+      <div class="ContentdivSection1 flexRowDisplaysbs">
         <div class="leftDivSection1 flexColDisplaysc">
           <div class="elementSec1">
             <h3 class="flexRowDisplaysc">Tytuł utworu</h3>
@@ -58,23 +58,32 @@
         </div>
         <div class="rightDivSection1">
           <h3 class="flexRowDisplaysc">Tytuł utworu</h3>
-          <div class="playVoice">
+          <div class="playVoiceDiv">
 
           </div>
-          <div class="filesinelement">
-            <a href="#" data-toggle="modal" data-target="#myModal"><img src="elements/element1/98c69955-9742-4fbf-9937-b419730b74b9 (1) (1) (1).png" alt=""></a>
+          <div class="filesinelement flexRowDisplaysc">
+            <a href="#" data-toggle="modal" data-target="#myModal"><img src="img/pdf.png" alt=""></a>
             <div class="container">
               <!-- Trigger the modal with a button -->
               <!-- http://dotnetqueries.com/Article/162/how-to-display-pdf-in-bootstrap-modal-popup -->
               <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
               <div id="myModal" class="modal fade" role="dialog">
                 <div class="ViewFile flexColDisplaycc">
-                  <embed class="embedClass" src="elements/element1/Wellerman_3st.pdf" frameborder="0">
+                  <!-- <embed class="embedClass" src="elements/element1/Wellerman_3st.pdf" frameborder="0"> -->
+                    <object data="elements/element1/Wellerman_3st.pdf" type="application/pdf" width="100%" height="100%">
+                      <p>Your web browser doesn't have a PDF plugin.
+                      Instead you can <a href="filename.pdf">click here to
+                      download the PDF file.</a></p>
+                    </object>
                 </div>
                 <button type="button" id="embedButtonId" data-dismiss="modal">Close</button>
               </div>
             </div>
-      
+          </div>
+          <div class="edittrackdiv flexRowDisplaysc">
+            <button class="addtrackButton edittrackButton">Add track</button>
+            <button class="deletettrackButton edittrackButton">Delete element</button>
+
           </div>
         </div>
       </div>
