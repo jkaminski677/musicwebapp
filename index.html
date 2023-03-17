@@ -9,9 +9,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
-  <a href="ipad.html">ipad</a>
-  <div class="wrapper">
-    <header>Upload file...</header>
+  <header>
+    <div class="topnav">
+      <h1>MusicWebApp</h1>
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input class="none" type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <div class="popup">
+    <h3>Upload file...</h3>
     <form action="#">
       <input class="file-input" type="file" name="file" hidden>
       <i class="fas fa-cloud-upload-alt"></i>

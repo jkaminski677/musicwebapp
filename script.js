@@ -7,9 +7,19 @@ const video = ['mp4', 'webm', 'mkv', 'flv', 'vob', 'ogv', 'ogg', 'drc', 'gif', '
 const audio = ['3gp', 'aa', 'aac', 'aax', 'act', 'dvf', 'm4a', 'm4b', 'm4p', 'mp3', 'mpc', 'wav', 'wma', 'wv', 'webm', '8svx'];
 const pdf = ['pdf', 'txt']
 
+// check ip addres
+fetch('https://api.ipify.org/').then(
+    r => r.text()
+).then(console.log);
+
+//cie - 46.204.12.43
+
+////////////////////////////////////////
+
+
 // form click event
 form.addEventListener("click", () =>{
-  fileInput.click();
+  form.click();
 });
 
 fileInput.onchange = ({target})=>{
