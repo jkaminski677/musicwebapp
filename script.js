@@ -1,4 +1,5 @@
-const form = document.querySelector("form"),
+const popup = document.querySelector(".popup"),
+form = document.querySelector(".uploadform"),
 fileInput = document.querySelector(".file-input"),
 progressArea = document.querySelector(".progress-area"),
 uploadedArea = document.querySelector(".uploaded-area");
@@ -19,7 +20,7 @@ fetch('https://api.ipify.org/').then(
 
 // form click event
 form.addEventListener("click", () =>{
-  form.click();
+  fileInput.click();
 });
 
 fileInput.onchange = ({target})=>{

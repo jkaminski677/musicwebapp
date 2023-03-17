@@ -9,24 +9,54 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
-  <header>
+  <header class="flexRowDisplaycc">
     <div class="topnav">
       <h1>MusicWebApp</h1>
       <div class="search-container">
-        <form action="/action_page.php">
-          <input class="none" type="text" placeholder="Search.." name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
+        <form class="searchForm flexRowDisplayec" action="#">
+          <input class="searchInput" type="text" placeholder="Search.." name="search">
+          <button class="searchButton flexRowDisplaycc" type="submit"><img class="searchIcon" src="img/search.png" alt="Search"></button>
         </form>
       </div>
     </div>
   </header>
+  <section class="section1 flexColDisplaycc">
+    <div class="divSection1 flexColDisplaycc">
+      <div class="multipleSection1 flexRowDisplaysc">
+        <button class="but1 buttonSec1"></button>
+        <button class="but2 buttonSec1"></button>
+      </div>
+      <div class="ContentdivSection1 flexRowDisplaysbc">
+        <div class="leftDivSection1 flexColDisplaysc">
+          <div class="elementSec1">
+            <h3 class="flexRowDisplaysc">Tytuł piosenki</h3>
+            <div class="fastPlayMode flexRowDisplaysc">
+              <audio controls>
+                <source src="elements/element1/Willow-–-Jasmine-Thompson-Wedding-Dance-Choreography.mp3" type="audio/ogg">
+              Your browser does not support the audio element.
+              </audio>
+              
+            </div>
+            <button class="chechOutButton flexColDisplaycc"><img src="" alt="">przycisk roz</button>
+            <div class="checkFIlesInEl flexRowDisplaycc">
+              obrazki z utworami
+            </div>
+          </div>
+        </div>
+        <div class="rightDivSection1">
+          right
+        </div>
+      </div>
+    </div>
+      
+  </section>
 
 
 
 
   <div class="popup">
     <h3>Upload file...</h3>
-    <form action="#">
+    <form class="uploadform" action="#">
       <input class="file-input" type="file" name="file" hidden>
       <i class="fas fa-cloud-upload-alt"></i>
       <p>Browse File to Upload</p>
