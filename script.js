@@ -9,9 +9,9 @@ const audio = ['3gp', 'aa', 'aac', 'aax', 'act', 'dvf', 'm4a', 'm4b', 'm4p', 'mp
 const pdf = ['pdf', 'txt']
 
 // check ip addres
-fetch('https://api.ipify.org/').then(
-    r => r.text()
-).then(console.log);
+// fetch('https://api.ipify.org/').then(
+//     r => r.text()
+// ).then(console.log);
 
 //cie - 46.204.12.43
 

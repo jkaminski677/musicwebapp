@@ -7,7 +7,10 @@
   <title>MusicWebApp</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="styleAudio.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
   <header class="flexRowDisplaycc">
@@ -24,28 +27,26 @@
   <section class="section1 flexColDisplaycc">
     <div class="divSection1 flexColDisplaycc">
       <div class="multipleSection1 flexRowDisplaysc">
-        <button class="but1 buttonSec1"></button>
-        <button class="but2 buttonSec1"></button>
+        <!-- <button class="but1 buttonSec1"></button>
+        <button class="but2 buttonSec1"></button> -->
       </div>
       <div class="ContentdivSection1 flexRowDisplaysbc">
         <div class="leftDivSection1 flexColDisplaysc">
           <div class="elementSec1">
-            <h3 class="flexRowDisplaysc">Tytuł piosenki</h3>
+            <h3 class="flexRowDisplaysc">Tytuł utworu</h3>
             <div class="fastPlayMode flexRowDisplaysc">
               <audio controls>
                 <source src="elements/element1/Willow-–-Jasmine-Thompson-Wedding-Dance-Choreography.mp3" type="audio/ogg">
               Your browser does not support the audio element.
               </audio>
-              <!-- <audio id="player" src="elements/element1/Willow-–-Jasmine-Thompson-Wedding-Dance-Choreography.mp3"></audio>
-                <div> 
+
+              <!-- <audio class="element1" id="player" src="elements/element1/Willow-–-Jasmine-Thompson-Wedding-Dance-Choreography.mp3"></audio>
+                <div class="audioOwnPlayer">
                   <button onclick="document.getElementById('player').play()">Play</button> 
                   <button onclick="document.getElementById('player').pause()">Pause</button> 
                   <button onclick="document.getElementById('player').volume += 0.1">Vol +</button> 
                   <button onclick="document.getElementById('player').volume -= 0.1">Vol -</button> 
                 </div> -->
-              <!-- <div id="audio-player-container">
-                <button id="play-icon"></button>
-              </div> -->
               
             </div>
             <button class="chechOutButton flexColDisplaycc"><img src="img/right.png" alt="Expand"></button>
@@ -56,7 +57,43 @@
           </div>
         </div>
         <div class="rightDivSection1">
-          right
+          <h3 class="flexRowDisplaysc">Tytuł utworu</h3>
+          <div class="playVoice">
+
+          </div>
+          <div class="filesinelement">
+            <a href="#"><img src="elements/element1/98c69955-9742-4fbf-9937-b419730b74b9 (1) (1) (1).png" alt=""></a>
+
+            <div class="container">
+
+              <!-- Trigger the modal with a button -->
+              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+              <!-- Modal -->
+              <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+      
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Modal Header</h4>
+                          </div>
+                          <div class="modal-body">
+      
+                              <embed src="~/Content/Article List.pdf"
+                                     frameborder="0" width="100%" height="400px">
+      
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              </div>
+                          </div>
+      
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+          </div>
         </div>
       </div>
     </div>
