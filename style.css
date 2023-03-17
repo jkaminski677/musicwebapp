@@ -267,6 +267,31 @@ header{
   width: 100px;
 }
 
+.ViewFile {
+  margin: 1%;
+  width: 98%;
+  text-align: center;
+  /* border: 2px solid peru; */
+  height: 80vh;
+}
+
+.embedClass {
+  width: 100%;
+  height: 100%;
+  /* border: 2px solid peru; */
+  border-radius: 10px;
+
+}
+
+#embedButtonId {
+  border: 2px solid peru;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  position: relative;
+  margin: 1%;
+}
+
 
 /* ////////////////// PUPUP /////////////////// */
 ::selection{
