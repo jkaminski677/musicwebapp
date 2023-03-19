@@ -1,18 +1,20 @@
-
-
 const zoomButton = document.getElementById('zoom');
 const input = document.getElementById('inputFile');
 const openFile = document.getElementById('openPDF');
 const currentPage = document.getElementById('current_page');
 const viewer = document.querySelector('.pdf-viewer');
-let currentPDF = {}
+let currentPDF = {
+    file: "elements/element1/Wellerman_3st.pdf",
+countOfPages: 0,
+currentPage: 1,
+zoom: 1}
 
 function resetCurrentPDF() {
 	currentPDF = {
-		file: null,
+		file: "elements/element1/Wellerman_3st.pdf",
 		countOfPages: 0,
 		currentPage: 1,
-		zoom: 1.5
+		zoom: 1
 	}
 }
 
@@ -25,7 +27,7 @@ input.addEventListener('change', event => {
 	const inputFile = event.target.files[0];
 	if (inputFile.type == 'application/pdf') {
 		const reader = new FileReader();
-		reader.readAsDataURL(inputFile);
+		reader.readAsDataURL("elements/element1/Wellerman_3st.pdf");
 		reader.onload = () => {
 			loadPDF(reader.result);
 			zoomButton.disabled = false;
@@ -40,7 +42,7 @@ input.addEventListener('change', event => {
 zoomButton.addEventListener('input', () => {
 	if (currentPDF.file) {
 		document.getElementById('zoomValue').innerHTML = zoomButton.value + "%";
-		currentPDF.zoom = parseInt(zoomButton.value) / 100;
+		currentPDF.zoom = parseInt(zoomButton.value) / 200;
 		renderCurrentPage();
 	}
 });
@@ -65,7 +67,7 @@ function loadPDF(data) {
 	const pdfFile = pdfjsLib.getDocument(data);
 	resetCurrentPDF();
 	pdfFile.promise.then((doc) => {
-		currentPDF.file = doc;
+		currentPDF.file = "elements/element1/Wellerman_3st.pdf";
 		currentPDF.countOfPages = doc.numPages;
 		viewer.classList.remove('hidden');
 		document.querySelector('main h3').classList.add("hidden");
