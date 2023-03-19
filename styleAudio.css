@@ -14,4 +14,6 @@ audio::-webkit-media-controls-panel {
 #the-canvas {
   border: 1px solid black;
   direction: ltr;
+  width: 95vw;
+  height: auto;
 }

@@ -6,13 +6,23 @@ var url = 'elements/element1/Wellerman_3st.pdf';
 var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
 // The workerSrc property shall be specified.
-pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+// pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js'; // The same in local workker2.js
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'workker2.js';
+let scalePDF = 10;
+let interval11 = setInterval(() => {
+    scalePDF = window.screen.width / 200;
+    console.log(scalePDF);
+}, 400);
+
+// let scalePDF = screen.width / 200;
+
+
 
 var pdfDoc = null,
     pageNum = 1,
     pageRendering = false,
     pageNumPending = null,
-    scale = 0.8,
+    scale = scalePDF,
     canvas = document.getElementById('the-canvas'),
     ctx = canvas.getContext('2d');
 
