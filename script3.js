@@ -7,15 +7,15 @@ var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
 // The workerSrc property shall be specified.
 // pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js'; // The same in local workker2.js
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'workker2.js';
-// var scalePDF = 4;
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'JSfiles/workker2.js';
+var scalePDF = 4;
 // setInterval(() => {
 //     scalePDF = window.screen.width / 200;
 //     console.log(scalePDF);
 // }, 400);
 
-var scalePDF = screen.width / 480;
-console.log(scalePDF);
+// var scalePDF = screen.width / 480;
+// console.log(scalePDF);
 
 var pdfDoc = null,
     pageNum = 1,
