@@ -288,11 +288,51 @@ header{
 
 .ViewFile {
   /* margin: 1%; */
-  padding: 1%;
+  padding: 0 0.5% 0 0.5%;
   width: 100vw;
   text-align: center;
   /* border: 2px solid peru; */
   height: 100vh;
+}
+
+.div2{
+  width: 100%;
+  height: 90%;
+  /* border: 2px solid peru; */
+  background-color: #3b3b3b;
+  padding: 15px 10px 30px 10px;
+  border-radius: 10px;
+}
+
+.pageChangerDiv {
+  /* border: 2px solid peru; */
+  padding-bottom: 10px;
+}
+.pageChangerDiv span {
+  color: #41dfff;
+}
+
+.canvasDiv {
+  /* border: 2px solid peru; */
+  height: 97%;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: #272727;
+}
+
+#the-canvas {
+  /* border: 2px solid rgb(0, 255, 34); */
+  /* direction: ltr; */
+  /* height: 100%; */
+  padding: 5px;
+  width: 80%;
+}
+
+
+#pdf-js-viewer {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .embedClass {
@@ -314,7 +354,7 @@ header{
   height: 40px;
   border-radius: 10px;
   /* position: relative; */
-  margin: 1%;
+  margin: 10px;
   background: none;
   color: rgb(248, 248, 248);
   transition: 0.1s;
@@ -362,44 +402,7 @@ header{
   min-width: 140px;
 }
 
-.div2{
-  width: 100%;
-  height: 90%;
-  /* border: 2px solid peru; */
-  background-color: #404040;
-  padding: 20px;
-  border-radius: 10px;
-}
 
-.pageChangerDiv {
-  /* border: 2px solid peru; */
-  padding-bottom: 10px;
-}
-.pageChangerDiv span {
-  color: #41dfff;
-}
-
-.canvasDiv {
-  /* border: 2px solid peru; */
-  height: 97%;
-  width: 100%;
-  overflow-y: scroll;
-
-}
-
-#the-canvas {
-  /* border: 2px solid rgb(0, 255, 34); */
-  /* direction: ltr; */
-  /* height: 100%; */
-  width: 100%;
-}
-
-
-#pdf-js-viewer {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-}
 
 
 /* ////////////////// PUPUP add music /////////////////// */
