@@ -16,9 +16,6 @@
 
 </head>
 <body>
-  <script src="pdf2.js"></script>
-  <script src="script3.js"></script>
-
   <header class="flexRowDisplaycc">
     <div class="topnav">
       <h1>MusicWebApp</h1>
@@ -81,12 +78,22 @@
                       Instead you can <a href="elements/element1/Wellerman_3st.pdf">click here to
                       download the PDF file.</a></p>
                       </iframe> -->
-                      <!-- <div class="div2">
-                        <iframe id="pdf-js-viewer" src="pdfjs-3.4.120-legacy-dist/web/compressed.tracemonkey-pldi-09.pdf" title="webviewer" frameborder="0"></iframe>
-                      </div> -->
-                      <iframe class="embedClass" src="new.html"></iframe>
-                </div>
-                <button type="button" id="embedButtonId" data-dismiss="modal">Close</button>
+                      <div class="div2">
+                        <!-- <iframe id="pdf-js-viewer" src="pdfjs-3.4.120-legacy-dist/web/compressed.tracemonkey-pldi-09.pdf" title="webviewer" frameborder="0"></iframe> -->
+                        <div class="pageChangerDiv">
+                            <button id="prev">Previous</button>
+                            <button id="next">Next</button>
+                            &nbsp; &nbsp;
+                            <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+                        </div>
+
+                        <div class="canvasDiv">
+                            <canvas id="the-canvas"></canvas>
+                        </div>
+                      </div>
+                      <button type="button" id="embedButtonId" data-dismiss="modal">Close</button>
+
+                    </div>
               </div>
             </div>
           </div>
@@ -116,9 +123,10 @@
     <section class="uploaded-area"></section>
   </div>
 
-  <script src="script.js"></script>
   <script src="pdf2.js"></script>
   <script src="script3.js"></script>
+
+  <script src="script.js"></script>
 
 
 </body>

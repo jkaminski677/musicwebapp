@@ -287,11 +287,12 @@ header{
 }
 
 .ViewFile {
-  margin: 1%;
-  width: 98%;
+  /* margin: 1%; */
+  padding: 1%;
+  width: 100vw;
   text-align: center;
-  /* border: 2px solid peru; */
-  height: 80vh;
+  border: 2px solid peru;
+  height: 100vh;
 }
 
 .embedClass {
@@ -302,12 +303,17 @@ header{
 
 }
 
+#myModal{
+  text-align: center;
+}
+
 #embedButtonId {
   border: 2px solid rgb(255, 255, 255);
-  width: 100px;
+  text-align: center;
+  width: 70%;
   height: 40px;
   border-radius: 10px;
-  position: relative;
+  /* position: relative; */
   margin: 1%;
   background: none;
   color: rgb(248, 248, 248);
@@ -358,10 +364,30 @@ header{
 
 .div2{
   width: 100%;
-  height: 100%;
+  height: 90%;
+  border: 2px solid peru;
+}
+
+.pageChangerDiv {
   /* border: 2px solid peru; */
+}
+
+.canvasDiv {
+  border: 2px solid peru;
+  height: 95%;
+  width: 100%;
+  overflow-y: scroll;
 
 }
+
+#the-canvas {
+  border: 2px solid rgb(0, 255, 34);
+  /* direction: ltr; */
+  /* height: 100%; */
+  width: 100%;
+}
+
+
 #pdf-js-viewer {
   width: 100%;
   height: 100%;
