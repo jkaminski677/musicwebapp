@@ -356,6 +356,18 @@ header{
   min-width: 140px;
 }
 
+.div2{
+  width: 100%;
+  height: 100%;
+  /* border: 2px solid peru; */
+
+}
+#pdf-js-viewer {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
 
 /* ////////////////// PUPUP add music /////////////////// */
 ::selection{
