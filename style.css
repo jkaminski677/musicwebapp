@@ -320,12 +320,18 @@ header{
   background-color: #272727;
 }
 
+.div-canvas-Scale {
+  border: 2px solid peru;
+  width: 98%;
+  /* padding: 5px; */
+}
+
 #the-canvas {
   /* border: 2px solid rgb(0, 255, 34); */
   /* direction: ltr; */
   /* height: 100%; */
-  padding: 5px;
-  width: 98%;
+  /* padding: 5px; */
+  width: 100%;
 }
 
 .rangeslider{

@@ -1,6 +1,7 @@
 var pageCanvas = document.getElementById('the-canvas');
 var scalePDF = 4;
 var pdfViewer = document.querySelector('.canvasDiv');
+var thisScale = document.querySelector('.div-canvas-Scale');
 
 // setInterval(() => {
 //     scalePDF = window.screen.width / 200;
@@ -16,8 +17,9 @@ output.innerHTML = rangeslider.value;
 
 rangeslider.oninput = function() {
   output.innerHTML = this.value;
-  pageCanvas.style.width = this.value * 3 + "%";
-  console.log(pageCanvas.style.width);
+  thisScale.style.width = this.value * 4 + "%";
+  console.log(rangeslider.value);
+  // console.log(thisScale.style.width);
   // if(pageCanvas.style.width > "180%"){
   //   scalePDF = 10;
   //   renderPage(pageNum);
@@ -28,18 +30,27 @@ rangeslider.oninput = function() {
 }
 
 function zoom(event) {
-  event.preventDefault();
+  if(event.ctrlKey == true){
+    event.preventDefault();
 
-  scale += event.deltaY * -0.01;
+    scale += event.deltaY * -0.8;
 
-  // Restrict scale
-  scale = Math.min(Math.max(0.125, scale), 4);
+    // Restrict scale
+    scale = Math.min(Math.max(1, scale), 400);
 
-  // Apply scale transform
-  pageCanvas.style.transform = `scale(${scale})`;
+    // Apply scale transform
+    // pageCanvas.style.transform = `scale(${scale})`;
+    thisScale.style.width = scale + "%";
+    rangeslider.value = (scale/4).toFixed(0);
+    output.innerHTML = (scale/4).toFixed(0);
+    console.log(rangeslider.value);
+
+
+  }
+  
 }
 
-var scale = 1;  
+var scale = 100;  
 pdfViewer.onwheel = zoom;
 
 
