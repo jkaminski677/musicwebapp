@@ -1,30 +1,7 @@
 var pageCanvas = document.getElementById('the-canvas');
-
-var rangeslider = document.getElementById("sliderRange");
-var output = document.getElementById("demo");
-output.innerHTML = rangeslider.value;
-
-// pageCanvas.width = rangeslider.value * 1.5 + "%";
-
-rangeslider.oninput = function() {
-  output.innerHTML = this.value;
-  pageCanvas.style.width = this.value + "%";
-  console.log(this.value);
-}
-
-
-// If absolute URL from the remote server is provided, configure the CORS
-// header on that server.
-var url = 'elements/element1/Wellerman_3st.pdf';
+var scalePDF = 4;
 var pdfViewer = document.querySelector('.canvasDiv');
 
-// Loaded via <script> tag, create shortcut to access PDF.js exports.
-var pdfjsLib = window['pdfjs-dist/build/pdf'];
-
-// The workerSrc property shall be specified.
-pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js'; // The same in local workker2.js
-// pdfjsLib.GlobalWorkerOptions.workerSrc = 'JSfiles/workker2.js';
-var scalePDF = 4;
 // setInterval(() => {
 //     scalePDF = window.screen.width / 200;
 //     console.log(scalePDF);
@@ -32,6 +9,52 @@ var scalePDF = 4;
 
 // var scalePDF = screen.width / 480;
 // console.log(scalePDF);
+
+var rangeslider = document.getElementById("sliderRange");
+var output = document.getElementById("demo");
+output.innerHTML = rangeslider.value;
+
+rangeslider.oninput = function() {
+  output.innerHTML = this.value;
+  pageCanvas.style.width = this.value * 3 + "%";
+  console.log(pageCanvas.style.width);
+  // if(pageCanvas.style.width > "180%"){
+  //   scalePDF = 10;
+  //   renderPage(pageNum);
+  // }
+  // else {
+  //   scalePDF = 4;
+  // }
+}
+
+function zoom(event) {
+  event.preventDefault();
+
+  scale += event.deltaY * -0.01;
+
+  // Restrict scale
+  scale = Math.min(Math.max(0.125, scale), 4);
+
+  // Apply scale transform
+  pageCanvas.style.transform = `scale(${scale})`;
+}
+
+var scale = 1;  
+pdfViewer.onwheel = zoom;
+
+
+
+// If absolute URL from the remote server is provided, configure the CORS
+// header on that server.
+var url = 'elements/element1/Wellerman_3st.pdf';
+
+// Loaded via <script> tag, create shortcut to access PDF.js exports.
+var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+// The workerSrc property shall be specified.
+pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js'; // The same in local workker2.js
+// pdfjsLib.GlobalWorkerOptions.workerSrc = 'JSfiles/workker2.js';
+
 
 var pdfDoc = null,
     pageNum = 1,
