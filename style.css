@@ -325,8 +325,34 @@ header{
   /* direction: ltr; */
   /* height: 100%; */
   padding: 5px;
-  width: 80%;
+  width: auto;
 }
+
+.rangeslider{
+  width: 50%;
+}
+
+.myslider {
+  -webkit-appearance: none;
+  background: #FCF3CF  ;
+  width: 50%;
+  height: 20px;
+  opacity: 2;
+ }
+
+
+.myslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #62acf6  ;
+  width: 5%;
+  height: 20px;
+}
+
+.myslider:hover {
+  opacity: 1;
+}
+
 
 
 #pdf-js-viewer {

@@ -1,7 +1,22 @@
+var pageCanvas = document.getElementById('the-canvas');
+
+var rangeslider = document.getElementById("sliderRange");
+var output = document.getElementById("demo");
+output.innerHTML = rangeslider.value;
+
+// pageCanvas.width = rangeslider.value * 1.5 + "%";
+
+rangeslider.oninput = function() {
+  output.innerHTML = this.value;
+  pageCanvas.style.width = this.value + "%";
+  console.log(this.value);
+}
+
+
 // If absolute URL from the remote server is provided, configure the CORS
 // header on that server.
 var url = 'elements/element1/Wellerman_3st.pdf';
-// let pdfViewer = document.querySelector('.canvasDiv');
+var pdfViewer = document.querySelector('.canvasDiv');
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 var pdfjsLib = window['pdfjs-dist/build/pdf'];
@@ -18,13 +33,12 @@ var scalePDF = 4;
 // var scalePDF = screen.width / 480;
 // console.log(scalePDF);
 
-
 var pdfDoc = null,
     pageNum = 1,
     pageRendering = false,
     pageNumPending = null,
     scale = scalePDF,
-    canvas = document.getElementById('the-canvas'),
+    canvas = pageCanvas,
     ctx = canvas.getContext('2d');
 
 /**
@@ -105,14 +119,7 @@ pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
   document.getElementById('page_count').textContent = pdfDoc.numPages;
   // Initial/first page rendering
   renderPage(pageNum);
-
-  for(let i = 2; i <= pdfDoc.numPages; i++){
-    // const para = document.createElement("canvas");
-    // para.setAttribute('id','the-canvas');
-    // document.pdfViewer.appendChild(para);
-    // renderPage(i);
-    console.log(i);
-  }
+ 
   
 });
 
