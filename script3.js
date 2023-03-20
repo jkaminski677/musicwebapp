@@ -14,12 +14,22 @@ var thisScale = document.querySelector('.div-canvas-Scale');
 var rangeslider = document.getElementById("sliderRange");
 var output = document.getElementById("demo");
 output.innerHTML = rangeslider.value;
+var scale = 100;
+
+function ra() {
+  scale = 100;
+}
+ra();
+
+console.log(scale);
+
 
 rangeslider.oninput = function() {
   output.innerHTML = this.value;
-  thisScale.style.width = this.value * 4 + "%";
-  console.log(rangeslider.value);
-  if (scale > 100) {
+  thisScale.style.width = this.value + "%";
+  // console.log(rangeslider.value);
+  scale = this.value * 1;
+  if (rangeslider.value > 100) {
     pdfViewer.style.alignItems = 'flex-start';
   }
   else {
@@ -28,36 +38,32 @@ rangeslider.oninput = function() {
 }
 
 
-
 function zoom(event) {
-  rangeslider.value = (scale/4).toFixed(0)
+  // rangeslider.value = (scale/4).toFixed(0)
   if(event.ctrlKey == true){
     event.preventDefault();
-
     scale += event.deltaY * -0.8;
 
     // Restrict scale
     scale = Math.min(Math.max(1, scale), 400);
+    // console.log(scale);
 
     // Apply scale transform
     // pageCanvas.style.transform = `scale(${scale})`;
     thisScale.style.width = scale + "%";
-    rangeslider.value = (scale/4).toFixed(0);
-    output.innerHTML = (scale/4).toFixed(0);
-    console.log(rangeslider.value);
+    rangeslider.value = (scale).toFixed(0);
+    output.innerHTML = (scale).toFixed(0);
+    // console.log(rangeslider.value);
     if (scale > 100) {
       pdfViewer.style.alignItems = 'flex-start';
     }
     else {
       pdfViewer.style.alignItems = 'center';
     }
-
-
   }
   
 }
-
-var scale = 400;  
+ 
 pdfViewer.onwheel = zoom;
 
 
