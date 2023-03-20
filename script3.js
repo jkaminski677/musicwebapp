@@ -19,17 +19,18 @@ rangeslider.oninput = function() {
   output.innerHTML = this.value;
   thisScale.style.width = this.value * 4 + "%";
   console.log(rangeslider.value);
-  // console.log(thisScale.style.width);
-  // if(pageCanvas.style.width > "180%"){
-  //   scalePDF = 10;
-  //   renderPage(pageNum);
-  // }
-  // else {
-  //   scalePDF = 4;
-  // }
+  if (scale > 100) {
+    pdfViewer.style.alignItems = 'flex-start';
+  }
+  else {
+    pdfViewer.style.alignItems = 'center';
+  }
 }
 
+
+
 function zoom(event) {
+  rangeslider.value = (scale/4).toFixed(0)
   if(event.ctrlKey == true){
     event.preventDefault();
 
@@ -44,13 +45,19 @@ function zoom(event) {
     rangeslider.value = (scale/4).toFixed(0);
     output.innerHTML = (scale/4).toFixed(0);
     console.log(rangeslider.value);
+    if (scale > 100) {
+      pdfViewer.style.alignItems = 'flex-start';
+    }
+    else {
+      pdfViewer.style.alignItems = 'center';
+    }
 
 
   }
   
 }
 
-var scale = 100;  
+var scale = 400;  
 pdfViewer.onwheel = zoom;
 
 

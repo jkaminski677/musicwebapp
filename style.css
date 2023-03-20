@@ -77,6 +77,12 @@ body{
   justify-content: flex-start;
   align-items: center;
 }
+.flexColDisplayss{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
 header{
   width: 100%;
@@ -302,6 +308,7 @@ header{
   background-color: #3b3b3b;
   padding: 15px 10px 30px 10px;
   border-radius: 10px;
+  /* overflow-y: hidden; */
 }
 
 .pageChangerDiv {
@@ -314,16 +321,22 @@ header{
 
 .canvasDiv {
   /* border: 2px solid peru; */
-  height: 97%;
+  height: 90%;
   width: 100%;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  overflow: scroll;
   background-color: #272727;
+  padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .div-canvas-Scale {
-  border: 2px solid peru;
+  /* border: 2px solid peru; */
   width: 98%;
-  /* padding: 5px; */
+  padding: 10px;
 }
 
 #the-canvas {
