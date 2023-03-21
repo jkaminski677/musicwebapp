@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>PDF.js Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        display: block;
+        margin: auto;
+        width: 100%;
+        margin: 10px 0 10px 0;
+        border: 3px solid peru;
+      }
+      .allCamvas {
+        width: 500px;
+        background-color: black;
+        padding: 20px;
+      }
+      .Canvases{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="file" id="fileInput">
+    <div>
+      <button id="prevPage">Poprzednia</button>
+      <button id="nextPage">Następna</button>
+      <button id="allpages">Wszystkie strorny xd</button>
+      <span>Strona <span id="pageNum"></span> z <span id="pageCount"></span></span>
+    </div>
+    <div class="allCamvas">
+        <div class="Canvases">
+            <canvas id="pdfCanvas"></canvas>
+        </div>
+    </div>
+
+    <script>
+      var fileInput = document.getElementById('fileInput');
+      var prevPageButton = document.getElementById('prevPage');
+      var nextPageButton = document.getElementById('nextPage');
+      var pdfCanvas = document.getElementById('pdfCanvas');
+      var allPagesButton = document.getElementById('allpages');
+      var Canvases = document.getElementById('Canvases');
+      var pdfDoc = null;
+      var pageNum = 1;
+      var pageRendering = false;
+      var pageNumPending = null;
+      var scale = 1.5;
+      var ctx = pdfCanvas.getContext('2d');
+
+      // Update page counters
+      function updatePageCounters() {
+        document.getElementById('pageNum').textContent = pageNum;
+        document.getElementById('pageCount').textContent = pdfDoc.numPages;
+      }
+
+      // Load PDF file
+      fileInput.addEventListener('change', function(event) {
+        var file = event.target.files[0];
+
+        var fileReader = new FileReader();
+        fileReader.onload = function() {
+          var typedarray = new Uint8Array(this.result);
+          pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
+            pdfDoc = pdf;
+            updatePageCounters();
+            renderPage(pageNum);
+          });
+        };
+        fileReader.readAsArrayBuffer(file);
+      });
+
+
+    // // Load PDF file
+    // pdfjsLib.getDocument('example.pdf').promise.then(function(pdfDoc_) {
+    //     pdfDoc = pdfDoc_;
+    //     var numPages = pdfDoc.numPages;
+    //     for (var i = 1; i <= numPages; i++) {
+    //       var canvas = document.createElement('canvas');
+    //       canvas.id = 'canvas' + i;
+    //       canvasContainer.appendChild(canvas);
+    //       canvasArr.push(canvas);
+    //     }
+
+
+      // Render PDF page
+      function renderPage(num) {
+        pageRendering = true;
+        pdfDoc.getPage(num).then(function(page) {
+          var viewport = page.getViewport({scale: scale});
+          pdfCanvas.height = viewport.height;
+          pdfCanvas.width = viewport.width;
+
+          var renderContext = {
+            canvasContext: ctx,
+            viewport: viewport
+          };
+          var renderTask = page.render(renderContext);
+
+          renderTask.promise.then(function() {
+            pageRendering = false;
+            if (pageNumPending !== null) {
+              renderPage(pageNumPending);
+              pageNumPending = null;
+            }
+          });
+        });
+
+        updatePageCounters();
+      }
+
+      // Go to previous page
+      prevPageButton.addEventListener('click', function() {
+        if (pageNum <= 1) {
+          return;
+        }
+        pageNum--;
+        if (pageRendering) {
+          pageNumPending = pageNum;
+        } else {
+          renderPage(pageNum);
+        }
+      });
+
+      // Go to next page
+      nextPageButton.addEventListener('click', function() {
+        if (pageNum >= pdfDoc.numPages) {
+          return;
+        }
+        pageNum++;
+        if (pageRendering) {
+          pageNumPending = pageNum;
+        } else {
+          renderPage(pageNum);
+        }
+      });
+
+      // Render all pages
+      function renderAllPages() {
+        for (var i = 1; i <= 4; i++) {
+            const newDiv = document.createElement("canvas");
+            newDiv.id = 'the-canvas' + i;
+            // newDiv.className = 'colors';
+            Canvases.appendChild(newDiv);
+            const currentDiv = document.getElementById('the-canvas' + i);
+            currentDiv.style.width = "100%";
+            currentDiv.style.margin = "10px 0 10px 0";
+            pdfCanvas = currentDiv;
+
+          pdfDoc.getPage(i).then(function(page) {
+            var viewport = page.getViewport({scale: scale});
+            pdfCanvas.height = viewport.height;
+            pdfCanvas.width = viewport.width;
+
+            var renderContext = {
+              canvasContext: ctx,
+              viewport: viewport
+            };
+            var renderTask = page.render(renderContext);
+
+            renderTask.promise.then(function() {
+              if (i === pdfDoc.numPages) {
+                pageRendering = false;
+                updatePageCounters();
+              }
+            });
+          });
+        }
+      }
+
+      // Go to all pages
+      allPagesButton.addEventListener('click', function() {
+        pageNum = 1;
+        renderAllPages();
+      });
+    </script>
+  </body>
+</html>

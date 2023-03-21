@@ -5,15 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MusicWebApp</title>
+  <link rel="shortcut icon" href="#">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="styleAudio.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <!-- <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script> -->
   <!-- <script src="JSfiles/pdf2.js"></script> -->
-  <script src="script3.js"></script>
+  <!-- <script src="script3.js"></script> -->
 
 </head>
 <body>
@@ -31,8 +32,7 @@
   <section class="section1 flexColDisplaycc">
     <div class="divSection1 flexColDisplaycc">
       <div class="multipleSection1 flexRowDisplaysc">
-        <!-- <button class="but1 buttonSec1"></button>
-        <button class="but2 buttonSec1"></button> -->
+        <!-- <button></button> -->
       </div>
       <div class="ContentdivSection1 flexRowDisplaysbs">
         <div class="leftDivSection1 flexColDisplaysc">
@@ -42,16 +42,7 @@
               <audio controls>
                 <source src="elements/element1/Willow-–-Jasmine-Thompson-Wedding-Dance-Choreography.mp3" type="audio/ogg">
               Your browser does not support the audio element.
-              </audio>
-
-              <!-- <audio class="element1" id="player" src="elements/element1/Willow-–-Jasmine-Thompson-Wedding-Dance-Choreography.mp3"></audio>
-                <div class="audioOwnPlayer">
-                  <button onclick="document.getElementById('player').play()">Play</button> 
-                  <button onclick="document.getElementById('player').pause()">Pause</button> 
-                  <button onclick="document.getElementById('player').volume += 0.1">Vol +</button> 
-                  <button onclick="document.getElementById('player').volume -= 0.1">Vol -</button> 
-                </div> -->
-              
+              </audio>             
             </div>
             <button class="chechOutButton flexColDisplaycc"><img src="img/right.png" alt="Expand"></button>
             <div class="checkFIlesInEl flexRowDisplaycc">
@@ -86,26 +77,21 @@
                             <button id="next">Next</button>
                             &nbsp; &nbsp;
                             <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-                            
                             <div class="rangeslider flexRowDisplaycc">
                               <input type="range" min="10" max="400" value="24"
                                               class="myslider" id="sliderRange">
                               <p>Value: <span id="demo"></span></p>
                             </div>
-
                             <button type="button" id="" data-dismiss="modal">Close</button>
+                            <button id="allpages">Wszystkie strorny xd</button>
                         </div>
-
                         <div class="canvasDiv">
-                          <div class="div-canvas-Scale">
-                            <canvas id="the-canvas"></canvas>
-                            <!-- <canvas id="pdf_canvas"></canvas> -->
-
+                          <div class="div-canvas-Scale" id="Div-canvas-Scale">
+                            <!-- <canvas id="the-canvas"></canvas> -->
                           </div>
                         </div>
                       </div>
                       <button type="button" id="embedButtonId" data-dismiss="modal">Close</button>
-
                     </div>
               </div>
             </div>
@@ -124,7 +110,6 @@
 
 
 
-
   <div class="popup">
     <h3>Upload file...</h3>
     <form class="uploadform" action="#">
@@ -137,12 +122,10 @@
   </div>
 
   <!-- <script src="JSfiles/pdf2.js"></script> -->
-  <script src="script3.js"></script>
-  <script src="script4.js"></script>
-  <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
-
+  <!-- <script src="script3.js"></script> -->
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <script src="script5.js"></script>
   <script src="script.js"></script>
-
 
 </body>
 </html>

@@ -342,9 +342,16 @@ header{
 #the-canvas {
   /* border: 2px solid rgb(0, 255, 34); */
   /* direction: ltr; */
-  /* height: 100%; */
-  /* padding: 5px; */
   width: 100%;
+  margin: 10px 0 10px 0;
+  /* border: 2px solid peru; */
+}
+
+.colors {
+  /* width: 100%; */
+  /* margin: 10px 0 10px 0; */
+  /* height: 200px; */
+  border: 2px solid peru;
 }
 
 .rangeslider{
