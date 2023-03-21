@@ -349,7 +349,7 @@ header{
 
 .rangeslider{
   width: 40%;
-  border: 2px solid peru;
+  /* border: 2px solid peru; */
 }
 
 .myslider {
@@ -393,6 +393,12 @@ header{
 
 #myModal{
   text-align: center;
+  height: 100vh;
+  /* border: 2px solid peru; */
+}
+
+#Container {
+    /* border: 2px solid peru; */
 }
 
 #embedButtonId {
@@ -419,6 +425,7 @@ header{
   grid-column: 1 / span 4;
   grid-row: 6 / 6;
   padding: 20px 20px 0 20px;
+  flex-wrap: wrap;
 
 }
 
@@ -441,7 +448,7 @@ header{
 }
 
 .addtrackButton {
-  width: 80%;
+  width: 60%;
   min-width: 100px;
 }
 

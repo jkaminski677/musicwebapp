@@ -2,26 +2,11 @@ var pageCanvas = document.getElementById('the-canvas');
 var scalePDF = 4;
 var pdfViewer = document.querySelector('.canvasDiv');
 var thisScale = document.querySelector('.div-canvas-Scale');
-
-// setInterval(() => {
-//     scalePDF = window.screen.width / 200;
-//     console.log(scalePDF);
-// }, 400);
-
-// var scalePDF = screen.width / 480;
-// console.log(scalePDF);
-
 var rangeslider = document.getElementById("sliderRange");
 var output = document.getElementById("demo");
 output.innerHTML = rangeslider.value;
 var scale = 100;
 
-function ra() {
-  scale = 100;
-}
-ra();
-
-console.log(scale);
 
 
 rangeslider.oninput = function() {
@@ -42,11 +27,10 @@ function zoom(event) {
   // rangeslider.value = (scale/4).toFixed(0)
   if(event.ctrlKey == true){
     event.preventDefault();
-    scale += event.deltaY * -0.8;
+    scale += event.deltaY * -0.1;
 
     // Restrict scale
-    scale = Math.min(Math.max(1, scale), 400);
-    // console.log(scale);
+    scale = Math.min(Math.max(10, scale), 400);
 
     // Apply scale transform
     // pageCanvas.style.transform = `scale(${scale})`;
@@ -63,7 +47,7 @@ function zoom(event) {
   }
   
 }
- 
+
 pdfViewer.onwheel = zoom;
 
 
@@ -166,7 +150,5 @@ pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
   document.getElementById('page_count').textContent = pdfDoc.numPages;
   // Initial/first page rendering
   renderPage(pageNum);
- 
-  
 });
 

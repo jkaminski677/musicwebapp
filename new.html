@@ -1,35 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            canvas {
+                width: 500px;
+                height: 500px;
+                border: 3px solid black;
+                border-radius: 10px;
+            }
+            button {
+                outline :0;
+                border: none;
+                border-radius: 3px;
+                color: white;
+                background: black;
+                width: 100px;
+                height: 40px;
+                transition: all .1s ease-in-out;
+            }
+            button:hover {
+                background:  none;
+                border: 3px solid black;
+                color: black;
+            }
+        </style>
+          <script src="script4.js"></script>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleAudio.css" type="text/css">
-    <!-- <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script> -->
-    <script src="JSfiles/pdf2.js"></script>
+    </head>
+    <body>
+        <div id="loader">Loading ......</div>
+        <canvas id="pdf_canvas"></canvas>
+        <div class="container">
+                <button id="prev_page">Previos Page</button>
+                <button id="next_page">next Page</button>
+                <span id="current_page_num"></span>
+                    of
+                <span id="total_page_num"></span>
+                    
+                <input type="text" id="page_num">
+                <button id="go_to_page">Go To Page</button>
+        </div>
+        
+        <!-- Replace pdf.js with downloaded pdf.js file -->
+        <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+        <script src="script4.js"></script>
 
-
-	<title>PDF Viewer</title>
-</head>
-
-<body>
-    <script src="JSfiles/pdf2.js"></script>
-
-    <h1>PDF.js Previous/Next example</h1>
-
-    <div class="pageChangerDiv">
-        <button id="prev">Previous</button>
-        <button id="next">Next</button>
-        &nbsp; &nbsp;
-        <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-    </div>
-
-    <div class="canvasDiv">
-        <canvas id="the-canvas"></canvas>
-    </div>
-    <script src="JSfiles/pdf2.js"></script>
-	<script src="script3.js"></script>
-
-</body>
-
+    </body>
 </html>

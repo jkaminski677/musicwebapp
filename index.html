@@ -67,7 +67,7 @@
           </div>
           <div class="filesinelement flexRowDisplaysc">
             <a href="#" data-toggle="modal" data-target="#myModal"><img src="img/pdf.png" alt=""></a>
-            <div class="container">
+            <div class="container" id="Container">
               <!-- Trigger the modal with a button -->
               <!-- http://dotnetqueries.com/Article/162/how-to-display-pdf-in-bootstrap-modal-popup -->
               <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
@@ -88,7 +88,7 @@
                             <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
                             
                             <div class="rangeslider flexRowDisplaycc">
-                              <input type="range" min="1" max="400" value="24"
+                              <input type="range" min="10" max="400" value="24"
                                               class="myslider" id="sliderRange">
                               <p>Value: <span id="demo"></span></p>
                             </div>
@@ -99,6 +99,8 @@
                         <div class="canvasDiv">
                           <div class="div-canvas-Scale">
                             <canvas id="the-canvas"></canvas>
+                            <!-- <canvas id="pdf_canvas"></canvas> -->
+
                           </div>
                         </div>
                       </div>
@@ -108,7 +110,7 @@
               </div>
             </div>
           </div>
-          <div class="edittrackdiv flexRowDisplaysc">
+          <div class="edittrackdiv flexRowDisplaycc">
             <!-- <a href="new.html" target="_blank">new</a> -->
             <button class="addtrackButton edittrackButton">Add track</button>
             <button class="deletettrackButton edittrackButton">Delete element</button>
@@ -136,6 +138,8 @@
 
   <!-- <script src="JSfiles/pdf2.js"></script> -->
   <script src="script3.js"></script>
+  <script src="script4.js"></script>
+  <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
 
   <script src="script.js"></script>
 
