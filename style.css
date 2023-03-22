@@ -169,6 +169,7 @@ header {
 /* /////////// SECTION1 //////////// */
 .section1 {
   width: 100%;
+  padding: 0 0 100px 0;
 }
 
 .divSection1 {
@@ -310,16 +311,16 @@ header {
 
 .ViewFile {
   /* margin: 1%; */
-  padding: 0 0.5% 0 0.5%;
+  /* padding: 0 0.5% 0 0.5%; */
   width: 100vw;
+  height: 100vh;
   text-align: center;
   /* border: 2px solid peru; */
-  height: 100vh;
 }
 
 .div2 {
-  width: 100%;
-  height: 90%;
+  width: 99.5%;
+  height: 99%;
   /* border: 2px solid peru; */
   background-color: #3b3b3b;
   padding: 15px 10px 30px 10px;
@@ -339,8 +340,8 @@ header {
 
 .leftPagechanger {
   /* border: 2px solid peru; */
-  height: 100%;
-  width: 1px;
+  padding-left: 10px;
+
 }
 .centernPagechanger {
   /* border: 2px solid peru; */
@@ -350,6 +351,16 @@ header {
 .rightPagechanger {
   /* border: 2px solid peru; */
   padding-right: 10px;
+}
+
+#resetScale{
+  background: none;
+  border: none;
+  width: 30px;
+}
+
+#resetScale img {
+  width: 100%;
 }
 
 #downlo {

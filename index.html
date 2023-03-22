@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <title>MusicWebApp</title>
     <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="style.css" />
@@ -90,19 +90,23 @@
                     <div class="div2">
                       <!-- <iframe id="pdf-js-viewer" src="pdfjs-3.4.120-legacy-dist/web/compressed.tracemonkey-pldi-09.pdf" title="webviewer" frameborder="0"></iframe> -->
                       <div class="pageChangerDiv flexRowDisplaysbc">
-                        <div class="leftPagechanger"></div>
+                        <div class="leftPagechanger">
+                          <button id="resetScale" onclick="resetPageSize()" title="Wyrównaj na cały ekran">
+                            <img src="img/increase.png" alt="100% view pdf" />
+                          </button>
+                        </div>
                         <div class="centernPagechanger flexRowDisplaycc">
-                          Added shit
-                          <button id="prev">
-                            <img src="img/left-arrow.png" alt="" />
+
+                          <button id="prev" title="Poprzednia strona">
+                            <img src="img/left-arrow.png" alt="Previous page " />
                           </button>
 
                           <span
                             ><span id="page_num"></span> /
                             <span id="page_count"></span
                           ></span>
-                          <button id="next">
-                            <img src="img/right-arrow.png" alt="" />
+                          <button id="next" title="Kolejna strona">
+                            <img src="img/right-arrow.png" alt="Next page" />
                           </button>
                           <div class="rangeslider flexRowDisplaycc">
                             <input
@@ -116,8 +120,8 @@
                             <span id="demo"></span>
                           </div>
                           <a id="downloadPDF" href="nothing" download
-                            ><button id="downlo">
-                              <img src="img/download.png" alt="" /></button
+                            ><button id="downlo" title="Pobierz">
+                              <img src="img/download.png" alt="Download" /></button
                           ></a>
                         </div>
                         <div class="rightPagechanger flexRowDisplaycc">
@@ -125,8 +129,9 @@
                             type="button"
                             id="exitButton"
                             data-dismiss="modal"
+                            title="Zamknij"
                           >
-                            <img src="img/cancel.png" alt="" />
+                            <img src="img/cancel.png" alt="Close" />
                           </button>
                         </div>
                       </div>
@@ -136,13 +141,13 @@
                         </div>
                       </div>
                     </div>
-                    <button
+                    <!-- <button
                       type="button"
                       id="embedButtonId"
                       data-dismiss="modal"
                     >
                       Close
-                    </button>
+                    </button> -->
                   </div>
                 </div>
               </div>
@@ -159,7 +164,7 @@
       </div>
     </section>
 
-    <div class="popup">
+    <!-- <div class="popup">
       <h3>Upload file...</h3>
       <form class="uploadform" action="#">
         <input class="file-input" type="file" name="file" hidden />
@@ -168,7 +173,7 @@
       </form>
       <section class="progress-area"></section>
       <section class="uploaded-area"></section>
-    </div>
+    </div> -->
 
     <!-- <script src="JSfiles/pdf2.js"></script> -->
     <!-- <script src="script3.js"></script> -->

@@ -7,6 +7,7 @@ var rangeslider = document.getElementById("sliderRange");
 var output = document.getElementById("demo");
 var stopVar = 0;
 var maxi = 0;
+var distance = 0;
 document.getElementById('page_num').textContent = 1;
 output.innerHTML = rangeslider.value + "%";
 
@@ -114,6 +115,7 @@ rangeslider.oninput = function() {
   thisScale.style.width = this.value + "%";
   // console.log(rangeslider.value);
   scale = this.value * 1;
+  distance = this.value * 1;
   if (rangeslider.value > 100) {
     pdfViewer.style.alignItems = 'flex-start';
   }
@@ -137,6 +139,7 @@ function zoom(event) {
     thisScale.style.width = scale + "%";
     rangeslider.value = (scale).toFixed(0);
     output.innerHTML = (scale).toFixed(0) + "%";
+    distance = scale;
     // console.log(rangeslider.value);
     if (scale > 100) {
       pdfViewer.style.alignItems = 'flex-start';
@@ -148,21 +151,40 @@ function zoom(event) {
 }
 pdfViewer.onwheel = zoom;
 
+
 // Dodajemy nasłuchiwanie na zdarzenie dotknięcia i przesuwania dwóch palców
 pdfViewer.addEventListener('touchmove', function(event) {
   // Sprawdzamy, czy na ekranie jest więcej niż jeden palec
   if (event.touches.length > 1) {
     // Obliczamy odległość między palcami
-    const distance = Math.hypot(
+    distance = Math.hypot(
       event.touches[0].clientX - event.touches[1].clientX,
       event.touches[0].clientY - event.touches[1].clientY
     );
     // Ustawiamy właściwość transform z wartością scale opartą o odległość między palcami
     thisScale.style.width = distance + "%";
+    rangeslider.value = (distance).toFixed(0);
+    output.innerHTML = (distance).toFixed(0) + "%";
+    scale = distance * 1;
   }
+  console.log(distance);
 });
 
+
+function resetPageSize() {
+  thisScale.style.width = "100%";
+  rangeslider.value = 100;
+  output.innerHTML = "100%";
+  scale = 100;
+}
+// document.querySelector('#resetScale').addEventListener('click', resetPageSize());
+
+
+var button = document.getElementById("resetScale");
+button.title = "To jest przycisk";
+
 //////////////////// END ZOOMING ////////////////////////////
+
 
 
 // Download PDF
