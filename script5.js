@@ -147,6 +147,21 @@ function zoom(event) {
   }
 }
 pdfViewer.onwheel = zoom;
+
+// Dodajemy nasłuchiwanie na zdarzenie dotknięcia i przesuwania dwóch palców
+pdfViewer.addEventListener('touchmove', function(event) {
+  // Sprawdzamy, czy na ekranie jest więcej niż jeden palec
+  if (event.touches.length > 1) {
+    // Obliczamy odległość między palcami
+    const distance = Math.hypot(
+      event.touches[0].clientX - event.touches[1].clientX,
+      event.touches[0].clientY - event.touches[1].clientY
+    );
+    // Ustawiamy właściwość transform z wartością scale opartą o odległość między palcami
+    pdfViewer.style.width = distance + "%";
+  }
+});
+
 //////////////////// END ZOOMING ////////////////////////////
 
 
