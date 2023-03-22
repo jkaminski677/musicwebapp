@@ -338,20 +338,20 @@ header{
   border: none;
   /* background-image: url(img/left-arrow.png);
   background-position: center; */
-  width: 30px;
+  width: 2%;
 }
 #prev img {
-  width: 30px;
+  width: 100%;
 }
 #next {
   background: none;
   border: none;
   /* background-image: url(img/left-arrow.png);
   background-position: center; */
-  width: 30px;
+  width: 2%;
 }
 #next img {
-  width: 30px;
+  width: 100%;
 }
 
 #exitButton {
