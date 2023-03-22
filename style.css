@@ -196,10 +196,9 @@ header{
   padding: 15px;
   grid-template-columns: 30% 30% 30% 10%;
   grid-template-rows: 30% 70%;
-  border: 2px solid rgb(62, 62, 62);
-  -webkit-box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
-  -moz-box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
-  box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
+  -webkit-box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
+  box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
 }
 
 .elementSec1 h3 {
@@ -252,12 +251,16 @@ header{
   padding: 30px;
   width: 59%;
   min-height: 100%;
+  border-radius: 20px;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 10% 20% 20% 20% 20% 10%;
-  -webkit-box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
+  /* -webkit-box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
   -moz-box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
-  box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
+  box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32); */
+  -webkit-box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
+-moz-box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
+box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
 }
 
 .playVoiceDiv {
@@ -411,7 +414,7 @@ header{
 
 .myslider {
   -webkit-appearance: none;
-  background: #FCF3CF  ;
+  background: #c0c0c0  ;
   width: 50%;
   height: 20px;
   opacity: 2;
@@ -423,7 +426,7 @@ header{
 .myslider::-webkit-slider-thumb {
   -webkit-appearance: none;
   cursor: pointer;
-  background: #62acf6  ;
+  background: #000000  ;
   width: 5%;
   height: 20px;
 }
@@ -432,7 +435,11 @@ header{
   opacity: 1;
 }
 
-
+#demo{
+  margin-left: 10px;
+  width: 30px;
+  /* border: 2px solid peru; */
+}
 
 #pdf-js-viewer {
   width: 100%;

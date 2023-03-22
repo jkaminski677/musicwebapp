@@ -8,7 +8,7 @@ var output = document.getElementById("demo");
 var stopVar = 0;
 var maxi = 0;
 document.getElementById('page_num').textContent = 1;
-output.innerHTML = rangeslider.value;
+output.innerHTML = rangeslider.value + "%";
 
 const url = 'elements/element1/Wellerman_3st.pdf';
 
@@ -110,7 +110,7 @@ function changePage(numero, maxi) {
 
 //////////////////// ZOOMING ////////////////////////////
 rangeslider.oninput = function() {
-  output.innerHTML = this.value;
+  output.innerHTML = this.value + "%";
   thisScale.style.width = this.value + "%";
   // console.log(rangeslider.value);
   scale = this.value * 1;
@@ -136,7 +136,7 @@ function zoom(event) {
     // pageCanvas.style.transform = `scale(${scale})`;
     thisScale.style.width = scale + "%";
     rangeslider.value = (scale).toFixed(0);
-    output.innerHTML = (scale).toFixed(0);
+    output.innerHTML = (scale).toFixed(0) + "%";
     // console.log(rangeslider.value);
     if (scale > 100) {
       pdfViewer.style.alignItems = 'flex-start';
