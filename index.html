@@ -73,16 +73,19 @@
                       <div class="div2">
                         <!-- <iframe id="pdf-js-viewer" src="pdfjs-3.4.120-legacy-dist/web/compressed.tracemonkey-pldi-09.pdf" title="webviewer" frameborder="0"></iframe> -->
                         <div class="pageChangerDiv flexRowDisplaycc">
-                            <button id="prev">Previous</button>
-                            <button id="next">Next</button>
-                            &nbsp; &nbsp;
-                            <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-                            <div class="rangeslider flexRowDisplaycc">
-                              <input type="range" min="10" max="400" value="24"
-                                              class="myslider" id="sliderRange">
-                              <p>Value: <span id="demo"></span></p>
-                            </div>
-                            <button type="button" id="" data-dismiss="modal">Close</button>
+
+                          <button id="prev"><img src="img/left-arrow.png" alt=""></button>
+                          
+                          <span><span id="page_num"></span> / <span id="page_count"></span></span>
+                          <button id="next"><img src="img/right-arrow.png" alt=""></button>
+                          <div class="rangeslider flexRowDisplaycc">
+                            <input type="range" min="10" max="400" value="24"
+                                            class="myslider" id="sliderRange">
+                            <p>Value: <span id="demo"></span></p>
+                          </div>
+                          <a id="downloadPDF" href="#" download><button id="downlo"><img src="img/download.png" alt=""></button></a>
+
+                          <button type="button" id="exitButton" data-dismiss="modal"><img src="img/cancel.png" alt=""></button>
                         </div>
                         <div class="canvasDiv">
                           <div class="div-canvas-Scale" id="Div-canvas-Scale">

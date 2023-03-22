@@ -148,3 +148,8 @@ function zoom(event) {
 }
 pdfViewer.onwheel = zoom;
 //////////////////// END ZOOMING ////////////////////////////
+
+
+// Download PDF
+var downloadPDF = document.querySelector('#downloadPDF');
+downloadPDF.href = 'elements/element1/Wellerman_3st.pdf'
