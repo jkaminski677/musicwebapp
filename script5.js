@@ -158,7 +158,7 @@ pdfViewer.addEventListener('touchmove', function(event) {
       event.touches[0].clientY - event.touches[1].clientY
     );
     // Ustawiamy właściwość transform z wartością scale opartą o odległość między palcami
-    pdfViewer.style.width = distance + "%";
+    thisScale.style.width = distance + "%";
   }
 });
 
