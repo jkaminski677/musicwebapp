@@ -135,9 +135,11 @@ rangeslider.oninput = function() {
   distance = this.value * 1;
   if (rangeslider.value > 100) {
     pdfViewer.style.alignItems = 'flex-start';
+    onlyPDF.style.alignItems = 'flex-start';
   }
   else {
     pdfViewer.style.alignItems = 'center';
+    onlyPDF.style.alignItems = 'center';
   }
 }
 
