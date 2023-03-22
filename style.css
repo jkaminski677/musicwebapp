@@ -169,7 +169,7 @@ header {
 /* /////////// SECTION1 //////////// */
 .section1 {
   width: 100%;
-  padding: 0 0 100px 0;
+  padding: 0 0 500px 0;
 }
 
 .divSection1 {
@@ -291,11 +291,12 @@ header {
   grid-column: 1 / 3;
   grid-row: 5 / 6;
   padding: 20px 20px 0 20px;
-  /* border: 2px solid peru; */
+  border: 2px solid peru;
 }
 
-.filesinelement img {
+.filesinelement a img {
   transition: 0.1s;
+  width: 50px;
 }
 
 .filesinelement img:hover {
@@ -311,7 +312,7 @@ header {
 
 .ViewFile {
   /* margin: 1%; */
-  /* padding: 0 0.5% 0 0.5%; */
+  padding: 0.5% 0.5% 0.5% 0.5%;
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -319,11 +320,11 @@ header {
 }
 
 .div2 {
-  width: 99.5%;
-  height: 99%;
+  width: 100%;
+  height: 100%;
   /* border: 2px solid peru; */
   background-color: #3b3b3b;
-  padding: 15px 10px 30px 10px;
+  padding: 15px 10px 0px 10px;
   border-radius: 10px;
   /* overflow-y: hidden; */
 }
@@ -332,9 +333,20 @@ header {
   /* border: 2px solid peru; */
   padding-bottom: 10px;
 }
+
+.pageChangerDiv2 {
+  margin-top: 0px;
+  position: fixed;
+  /* border: 2px solid peru; */
+  padding: 10px;
+  width: 100%;
+  align-self: center;
+  background-color: #3b3b3b;
+}
+
 .centernPagechanger span {
-  color: #f0f0f0;
-  width: 50px;
+  /* width: 50px; */
+  padding: 0 10px;
   /* border: 2px solid peru; */
 }
 
@@ -430,8 +442,13 @@ header {
 .div-canvas-Scale {
   /* border: 2px solid peru; */
   width: 1240px;
-  /* width: 98%; */
   padding: 10px;
+}
+
+@media screen and (max-width: 1240px){
+  .div-canvas-Scale {
+    width: 90%;
+  }
 }
 
 #the-canvas {
@@ -495,15 +512,36 @@ header {
   border-radius: 10px;
 }
 
+#Container {
+  /* border: 2px solid peru; */
+}
+
 #myModal {
   text-align: center;
   height: 100vh;
   /* border: 2px solid peru; */
 }
 
-#Container {
+#myModal2{
   /* border: 2px solid peru; */
 }
+
+.purePDF {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.onlyPDF {
+  width: 100%;
+  /* border: 2px solid peru; */
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
 
 #embedButtonId {
   border: 2px solid rgb(255, 255, 255);
@@ -530,6 +568,7 @@ header {
   grid-row: 6 / 6;
   padding: 20px 20px 0 20px;
   flex-wrap: wrap;
+  border: 2px solid peru;
 }
 
 .edittrackButton {
