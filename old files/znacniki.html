@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Odtwarzacz audio</title>
+    <style>
+      .znacznik {
+        height: 20px;
+        width: 1px;
+        border: 1px solid peru;
+      }
+      .progress-bar__marker {
+        position: absolute;
+        width: 3px;
+        height: 8px;
+        border-radius: 20%;
+        background-color: red;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
+
+      .progress-bar__marker--start {
+        top: 50%;
+        left: 0;
+      }
+
+      .progress-bar__marker--end {
+        top: 50%;
+        right: 0;
+      }
+      .progr {
+        position: relative;
+        border: 2px solid peru;
+        width: 40%;
+      }
+      #progressBar {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="player">
+      <source src="elements/element2/Rainbows.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div>
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+      <div class="progr">
+        <input type="range" id="progressBar" min="0" max="100" step="0.1" />
+        <div class="progress-bar__marker progress-bar__marker--start"></div>
+        <div class="progress-bar__marker progress-bar__marker--end"></div>
+      </div>
+      <button id="markStart">Znacznik początku</button>
+      <button id="markEnd">Znacznik końca</button>
+      <button id="loop">Zapętlenie</button>
+      <button id="resetZn">Reset znaczników</button>
+
+      
+    </div>
+
+    <script>
+      const player = document.getElementById("player");
+      const playBtn = document.getElementById("play");
+      const pauseBtn = document.getElementById("pause");
+      const progressBar = document.getElementById("progressBar");
+      const markStartBtn = document.getElementById("markStart");
+      const markEndBtn = document.getElementById("markEnd");
+      const loopBtn = document.getElementById("loop");
+      const firstZn = document.querySelector(".progress-bar__marker--start");
+      const secZn = document.querySelector(".progress-bar__marker--end");
+      const resetZn = document.querySelector("#resetZn");
+
+      let start = 0;
+      let end = 0;
+      let loop = false;
+
+      player.addEventListener("timeupdate", function () {
+        if (!player.seeking) {
+          progressBar.value = (player.currentTime / player.duration) * 100;
+        }
+
+        if (loop && player.currentTime >= end) {
+          player.currentTime = start;
+        }
+      });
+
+      playBtn.addEventListener("click", function () {
+        player.play();
+      });
+
+      pauseBtn.addEventListener("click", function () {
+        player.pause();
+      });
+
+      progressBar.addEventListener("click", function (e) {
+        const percent = e.offsetX / this.offsetWidth;
+        // console.log(percent);
+        player.currentTime = percent * player.duration;
+        this.value = percent / 100;
+      });
+
+      markStartBtn.addEventListener("click", function () {
+        start = player.currentTime;
+        var lle = start / player.duration;
+        firstZn.style.left = lle * 100 + "%";
+        firstZn.style.display = "block";
+      });
+
+      markEndBtn.addEventListener("click", function () {
+        end = player.currentTime;
+        var lle = end / player.duration;
+        secZn.style.left = lle * 100 + "%";
+        secZn.style.display = "block";
+      });
+
+      loopBtn.addEventListener("click", function () {
+        if (start > 0 && end > 0) {
+          loop = !loop;
+          if (loop) {
+            player.currentTime = start;
+          }
+        }
+      });
+
+      resetZn.addEventListener("click", function () {
+        firstZn.style.display = "none";
+        secZn.style.display = "none";
+        start = 0;
+        end = 0;
+        loop = false;
+      });
+    </script>
+  </body>
+</html>

@@ -42,11 +42,32 @@ audio::-webkit-media-controls-panel {
 }
 
 .progress-container {
+  position: relative;
   width: 100%;
 }
 
 #progress {
   width: 100%;
+}
+
+.progress-bar__marker {
+  position: absolute;
+  width: 3px;
+  height: 8px;
+  border-radius: 20%;
+  background-color: red;
+  transform: translate(-50%, -50%);
+  /* display: none; */
+}
+
+.progress-bar__marker--start {
+  top: 50%;
+  left: 0;
+}
+
+.progress-bar__marker--end {
+  top: 50%;
+  right: 0;
 }
 
 .volume-container {

@@ -89,6 +89,8 @@
                         </div>
                         <div class="progress-container">
                           <input id="progress" type="range" min="0" max="100" step="0.01" value="0">
+                          <div class="progress-bar__marker progress-bar__marker--start"></div>
+                          <div class="progress-bar__marker progress-bar__marker--end"></div>
                         </div>
                         <div id="music-player-time">
                           <span id="current-time">0:00</span> / <span id="duration">0:00</span>
@@ -101,6 +103,10 @@
                           <label for="loop">Zapętlenie utworu:</label>
                           <input id="loop" type="checkbox">
                         </div>
+                        <button id="markStart">Znacznik początku</button>
+                        <button id="markEnd">Znacznik końca</button>
+                        <button id="loopZn">Zapętlenie znaczników</button>
+                        <button id="resetZn">Usuń znaczniki</button>
                       </div>
                     </div>
                 </div>

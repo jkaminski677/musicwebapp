@@ -269,10 +269,66 @@ const stopBtn = document.getElementById("stop");
 const loopCheckbox = document.getElementById("loop");
 const progress = document.getElementById("progress");
 const volumeSlider = document.getElementById("volume");
+// znaczniki
+const markStartBtn = document.getElementById("markStart");
+const markEndBtn = document.getElementById("markEnd");
+const loopBtn = document.getElementById("loopZn");
+const firstZn = document.querySelector(".progress-bar__marker--start");
+const secZn = document.querySelector(".progress-bar__marker--end");
+const resetZn = document.querySelector("#resetZn");
+let startZn = 0;
+let endZn = 0;
+let loopZn= false;
+
+
+markStartBtn.addEventListener("click", function () {
+  startZn = audio.currentTime;
+  var lle = startZn / audio.duration;
+  firstZn.style.left = lle * 100 + "%";
+  firstZn.style.display = "block";
+});
+
+markEndBtn.addEventListener("click", function () {
+  endZn = audio.currentTime;
+  var lle = endZn / audio.duration;
+  secZn.style.left = lle * 100 + "%";
+  secZn.style.display = "block";
+});
+
+loopBtn.addEventListener("click", function () {
+  console.log(startZn);
+  console.log(endZn);
+  if (startZn > 0 && endZn > 0) {
+    
+
+    loopZn = !loopZn;
+    if (loopZn) {
+      audio.currentTime = startZn;
+    }
+  }
+});
+
+resetZn.addEventListener("click", function () {
+  firstZn.style.display = "none";
+  secZn.style.display = "none";
+  startZn = 0;
+  endZn = 0;
+  loopZn = false;
+});
+
+
+
+
 
 function playAudio() {
-  audio.play();
+    audio.play();
 }
+
+audio.addEventListener("timeupdate", function () {
+  if (loopZn && audio.currentTime >= endZn) {
+    audio.currentTime = startZn;
+  }
+});
 
 function pauseAudio() {
   audio.pause();
@@ -281,6 +337,11 @@ function pauseAudio() {
 function stopAudio() {
   audio.pause();
   audio.currentTime = 0;
+  firstZn.style.display = "none";
+  secZn.style.display = "none";
+  startZn = 0;
+  endZn = 0;
+  loopZn = false;
 }
 
 function loopAudio() {
@@ -328,6 +389,8 @@ function formatTime(time) {
   const seconds = Math.floor(time % 60);
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
+
+
 
 // open question
 const questionToggles = document.querySelectorAll(".question-toggle");
