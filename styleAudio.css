@@ -13,7 +13,7 @@ audio::-webkit-media-controls-panel {
   max-width: 90%;
   margin: auto;
   padding: 20px;
-  border: 2px solid peru;
+  /* border: 2px solid peru; */
 }
 
 .title {
@@ -22,23 +22,40 @@ audio::-webkit-media-controls-panel {
 
 .player {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center;
   margin-top: 20px;
+  /* border: 2px solid peru; */
+}
+
+.controlAudio{
+  border: 2px solid peru;
+  margin-bottom: 10px;
+  height: 100px;
 }
 
 .controls {
   display: flex;
-  margin-bottom: 10px;
+  border: 2px solid peru;
+  height: 100%;
 }
 
-.control-btn {
-  font-size: 20px;
+.controlAudio img {
+  filter: invert(86%) sepia(82%) saturate(5129%) hue-rotate(173deg) brightness(105%) contrast(105%);
+}
+
+.control-btn{
+  /* font-size: 20px; */
   margin: 0 10px;
   border: none;
   background-color: transparent;
   cursor: pointer;
   outline: none;
+  width: 30px;
+}
+
+.control-btn img {
+  width: 100%;
 }
 
 .progress-container {
@@ -57,7 +74,7 @@ audio::-webkit-media-controls-panel {
   border-radius: 20%;
   background-color: red;
   transform: translate(-50%, -50%);
-  /* display: none; */
+  display: none;
 }
 
 .progress-bar__marker--start {
@@ -71,9 +88,15 @@ audio::-webkit-media-controls-panel {
 }
 
 .volume-container {
-  margin-top: 10px;
   display: flex;
   align-items: center;
+  width: 200px;
+  height: 100%;
+  border: 2px solid peru;
+}
+
+.volume-container img {
+  width: 30%;
 }
 
 .volume-container label {

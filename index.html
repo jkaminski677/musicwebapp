@@ -71,7 +71,7 @@
           <div class="rightDivSection1">
             <h3 class="flexRowDisplaysc">Tytuł utworu</h3>
             <div class="playVoiceDiv">
-              <!--  -->
+              <!-- Audio player  -->
               <div class="question">
                 <div class="question-header">
                   <h3>Sopran</h3>
@@ -82,31 +82,37 @@
                       <h1 class="title">Odtwarzacz muzyki</h1>
                       <div class="player">
                         <audio id="audio" src="../elements/element2/Rainbows.mp3"></audio>
-                        <div class="controls">
-                          <button id="play" class="control-btn">&#9658;</button>
-                          <button id="pause" class="control-btn">&#10074;&#10074;</button>
-                          <button id="stop" class="control-btn">&#9724;</button>
+                        <div class="controlAudio flexRowDisplaysc">
+                          <div class="controls">
+                            <button id="play" class="control-btn"><img src="img/play-button.png" alt=""></button>
+                            <button id="pause" class="control-btn"><img src="img/pause.png" alt=""></button>
+                            <button id="stop" class="control-btn"><img src="img/stop.png" alt=""></button>
+                          </div>
+                          <div class="volume-container">
+                            <!-- <label for="volume">Głośność:</label> -->
+                            <img src="img/medium-volume.png" alt="">
+                            <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+                          </div>
+                          <div class="loop-container">
+                            <label for="loop">Zapętlenie utworu:</label>
+                            <input id="loop" type="checkbox">
+                          </div>
+                          <button id="markStart">Znacznik początku</button>
+                          <button id="markEnd">Znacznik końca</button>
+                          <button id="loopZn">Zapętlenie znaczników</button>
+                          <button id="resetZn">Usuń znaczniki</button>
+                          <div id="music-player-time">
+                            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                          </div>
                         </div>
+                        
                         <div class="progress-container">
                           <input id="progress" type="range" min="0" max="100" step="0.01" value="0">
                           <div class="progress-bar__marker progress-bar__marker--start"></div>
                           <div class="progress-bar__marker progress-bar__marker--end"></div>
                         </div>
-                        <div id="music-player-time">
-                          <span id="current-time">0:00</span> / <span id="duration">0:00</span>
-                        </div>
-                        <div class="volume-container">
-                          <label for="volume">Głośność:</label>
-                          <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
-                        </div>
-                        <div class="loop-container">
-                          <label for="loop">Zapętlenie utworu:</label>
-                          <input id="loop" type="checkbox">
-                        </div>
-                        <button id="markStart">Znacznik początku</button>
-                        <button id="markEnd">Znacznik końca</button>
-                        <button id="loopZn">Zapętlenie znaczników</button>
-                        <button id="resetZn">Usuń znaczniki</button>
+                        
+                        
                       </div>
                     </div>
                 </div>
@@ -118,7 +124,7 @@
               <a href="#" data-toggle="modal" data-target="#myModal2"
                 onclick="OnlyPDFfun()"><img src="img/pdf.png" alt=""
               /></a>
-              
+              <!-- PDF -->
               <div class="container" id="Container">
                 <div id="myModal2" class="modal fade" role="dialog">
                   <div class="pageChangerDiv2 flexRowDisplaysbc">
@@ -192,6 +198,8 @@
                     </div>
                   </div>
                 </div>
+
+                <!--  -->
               </div>
               <div class="edittrackdiv flexRowDisplaycc">
                 <button class="addtrackButton edittrackButton">Add track</button>
@@ -220,7 +228,8 @@
     <!-- <script src="JSfiles/pdf2.js"></script> -->
     <!-- <script src="script3.js"></script> -->
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
-    <script src="script5.js"></script>
+    <script src="scriptPDF.js"></script>
+    <script src="scriptMusic.js"></script>
     <!-- <script src="script.js"></script> -->
   </body>
 </html>
