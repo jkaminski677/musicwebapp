@@ -78,7 +78,7 @@ LoopTags.addEventListener("click", function () {
   if (startZn >= 0 && endZn >= 0) {
     loopZn = !loopZn;
     if (loopZn) {
-        LoopTags.style.filter = "invert(45%) sepia(93%) saturate(416%) hue-rotate(179deg) brightness(85%) contrast(85%)";
+        LoopTags.style.filter = "invert(16%) sepia(85%) saturate(2043%) hue-rotate(238deg) brightness(94%) contrast(105%)";
         LoopTags.style.transform = 'scale(1.5)';
         audio.currentTime = startZn;
     } else {
@@ -139,7 +139,6 @@ function setVolume() {
   }
   if (audio.volume < 0.1){
     volumeImg.src = "img/zero-volume.png";
-    console.log("mniejsze");
   } 
   if (audio.volume > 0.45){
     volumeImg.src = "img/medium-volume.png";

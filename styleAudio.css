@@ -12,7 +12,7 @@ audio::-webkit-media-controls-panel {
 .container1 {
   max-width: 100%;
   margin: auto;
-  padding: 20px;
+  /* padding: 20px; */
   /* border: 2px solid peru; */
 }
 
@@ -25,15 +25,19 @@ audio::-webkit-media-controls-panel {
   flex-direction:column;
   align-items: center;
   /* margin-top: 20px; */
-  width: 98%;
-  border: 2px solid peru;
+  max-width: 98%;
+  /* border: 2px solid peru; */
 }
 
 .controlAudio{
-  border: 2px solid peru;
+  /* border: 2px solid peru; */
   margin-top: 10px;
   height: 60px;
   width: 100%;
+}
+
+.controlAudio button{
+  width: 30px;
 }
 
 .controls {
@@ -48,12 +52,12 @@ audio::-webkit-media-controls-panel {
 
 .control-btn{
   /* font-size: 20px; */
-  margin: 0 10px;
+  margin: 0 20px 0 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
   outline: none;
-  width: 30px;
+  /* width: 30px; */
   transition: 0.05s;
 }
 .control-btn:hover{
@@ -78,7 +82,7 @@ audio::-webkit-media-controls-panel {
   background-color: transparent;
   cursor: pointer;
   outline: none;
-  width: 30px;
+  /* width: 30px; */
   transition: 0.05s;
 }
 #toggleBtn img{
@@ -98,25 +102,29 @@ audio::-webkit-media-controls-panel {
 }
 
 .tagoftrack{
-  margin: 0 5px;
+  margin: 0 10px;
   border: none;
   background-color: transparent;
   cursor: pointer;
   outline: none;
-  width: 50px;
+  /* width: 50px; */
   /* border: 2px solid peru; */
+  transition: 0.05s;
 }
-
+.tagoftrack:hover{
+  transform: scale(1.1);
+}
+.tagoftrack:active{
+  transform: scale(1.3);
+}
 .tagoftrack img {
   width: 80%;
 }
-
 #loopZn img {
   width: 30px;
 }
-
-#LoopImg {
-  transition: 0.05s;
+#resetZn{
+  width: 50px;
 }
 
 .progress-container {
@@ -348,7 +356,6 @@ input[id=progress]:focus::-ms-fill-upper {
 }
 .progress-bar__marker img {
   width: 50%;
-  left: 30px;
 }
 
 .progress-bar__marker--start {
@@ -365,7 +372,8 @@ input[id=progress]:focus::-ms-fill-upper {
 .volume-container {
   display: flex;
   align-items: center;
-  width: 200px;
+  width: 20%;
+  min-width: 100px;
   height: 100%;
   /* border: 2px solid peru; */
 }
@@ -382,6 +390,7 @@ input[id=progress]:focus::-ms-fill-upper {
   display: flex;
   justify-content: center;
   width: 10%;
+  color: #b2d6f7;
   /* min-width: 100px; */
   /* border: 2px solid peru; */
   /* margin-top: 10px; */
