@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odtwarzacz muzyki</title>
+  <style>
+.container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden; /* ukrywa zawartość, która wykracza poza pojemnik */
+  position: relative;
+}
+
+#expand-element123 {
+  position: absolute;
+  top: 0px;
+  left: -100%; /* ustawiamy początkową pozycję poza pojemnikiem */
+  width: 70%;
+  height: 100%;
+  background-color: #ccc;
+  transition: left 0.5s ease-in-out; /* dodajemy animację przejścia */
+}
+
+#expand-element123.active {
+  left: 200px; /* po kliknięciu przycisku element zostanie przesunięty w prawo */
+}
+
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <button id="toggle-btn123">Kliknij, aby rozwijać / zwijać</button>
+        <div id="expand-element123">
+          Tutaj jest zawartość elementu, który zostanie rozwinięty i zwinięty.
+        </div>
+      </div>
+      
+
+  
+  
+    <script>
+const toggleBtn = document.getElementById('toggle-btn123');
+const expandElement = document.getElementById('expand-element123');
+
+toggleBtn.addEventListener('click', function() {
+  expandElement.classList.toggle('active'); /* dodajemy lub usuwamy klasę 'active' */
+});
+
+
+
+    </script>
+    
+</body>
+</html>
+
+  

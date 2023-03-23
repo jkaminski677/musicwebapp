@@ -201,28 +201,54 @@ header {
   margin: 0 20px 0 0;
 }
 .ContentdivSection1 {
-  height: 80vh;
-  width: 90%;
+  height: auto;
+  width: 95%;
+  /* padding: 1%; */
+  position: relative;
+  /* overflow: hidden; */
+  /* border: 2px solid peru; */
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 100%;
 }
 
 .leftDivSection1 {
-  width: 40%;
-  height: 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 1;
+  width: 98%;
+  min-height: 100%;
   padding: 30px 10px 30px 10px;
   border-radius: 20px;
   -webkit-box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
   -moz-box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
   box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
+  position: absolute;
+  top: 0px;
+  right: 0%;
+  transition: right 0.5s ease-in-out;
+}
+
+.leftDivSection1.active {
+  right: -200%;
+}
+
+@media screen and (max-width: 750px) {
+  .leftDivSection1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 1;
+  }
 }
 
 .elementSec1 {
   width: 95%;
   min-height: 90px;
+  max-height: 150px;
   /* border: 2px solid peru; */
   border-radius: 20px;
+  margin-bottom: 10px;
   display: grid;
   padding: 15px;
-  grid-template-columns: 30% 30% 30% 10%;
+  grid-template-columns: 30% 30% 20% 20%;
   grid-template-rows: 30% 70%;
   -webkit-box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
   -moz-box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
@@ -234,22 +260,28 @@ header {
   grid-column: 1 / span 3;
   grid-row: 1 / 1;
   margin-bottom: 20px;
+  margin-left: 15px;
 }
 
 .fastPlayMode {
   /* border: 2px solid peru; */
   grid-column: 1 / 3;
   grid-row: 2 / 2;
+  margin-left: 15px;
+}
+
+#openRightPanel {
+  /* border: 2px solid peru; */
+  grid-column: 4 / span 4;
+  grid-row: 1 / span 2;
 }
 
 .chechOutButton {
-  /* border: 2px solid peru; */
-  grid-column: 4 / 4;
-  grid-row: 1 / span 2;
   background: none;
   border: none;
   transition: 0.1s;
-  margin-left: 5px;
+  margin-left: 15px;
+  max-width: 50px;
 }
 
 .chechOutButton:hover {
@@ -262,6 +294,7 @@ header {
 
 .chechOutButton img {
   width: 100%;
+  /* min-height: 70% ; */
 }
 
 .checkFIlesInEl {
@@ -274,12 +307,15 @@ header {
 }
 
 .rightDivSection1 {
-  margin-left: 20px;
+  grid-column: 2 / span 2;
+  grid-row: 1 / 1;
+  /* margin-left: 20px; */
   padding: 30px;
-  width: 59%;
+  width: 98%;
   min-height: 100%;
   border-radius: 20px;
   display: grid;
+  margin-left: 20px;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 10% 20% 20% 20% 20% 10%;
   /* -webkit-box-shadow: 14px 16px 46px -14px rgba(66, 68, 90, 0.32);
@@ -288,6 +324,46 @@ header {
   -webkit-box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
   -moz-box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
   box-shadow: 4px 3px 31px -9px rgba(66, 68, 90, 1);
+  position: absolute;
+  top: 0px;
+  left: -200%;
+  transition: left 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 750px) {
+  .rightDivSection1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 1;
+  }
+}
+
+.rightDivSection1.active {
+  left: 0; /* po kliknięciu przycisku element zostanie przesunięty w prawo */
+}
+
+.rightPagechanger1 {
+  /* border: 2px solid peru; */
+  padding-right: 10px;
+  grid-column: 4 / span 4;
+  grid-row: 1 / 1;
+}
+#exitButtonRight {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 30px;
+  transition: 0.05s;
+}
+
+#exitButtonRight img {
+  width: 100%;
+}
+
+#exitButtonRight:hover {
+  transform: scale(1.1);
+}
+#exitButtonRight:active {
+  transform: scale(1.3);
 }
 
 .playVoiceDiv {
@@ -366,7 +442,6 @@ header {
 .leftPagechanger {
   /* border: 2px solid peru; */
   padding-left: 10px;
-
 }
 .centernPagechanger {
   /* border: 2px solid peru; */
@@ -378,7 +453,7 @@ header {
   padding-right: 10px;
 }
 
-#resetScale{
+#resetScale {
   background: none;
   border: none;
   width: 30px;
@@ -458,7 +533,7 @@ header {
   padding: 10px;
 }
 
-@media screen and (max-width: 1240px){
+@media screen and (max-width: 1240px) {
   .div-canvas-Scale {
     width: 90%;
   }
@@ -535,7 +610,7 @@ header {
   /* border: 2px solid peru; */
 }
 
-#myModal2{
+#myModal2 {
   /* border: 2px solid peru; */
 }
 
@@ -553,8 +628,6 @@ header {
   justify-content: flex-start;
   align-items: center;
 }
-
-
 
 #embedButtonId {
   border: 2px solid rgb(255, 255, 255);
@@ -618,7 +691,7 @@ header {
   background: #6990f2;
 }
 .popup {
-  visibility: hidden;
+  /* visibility: hidden; */
   bottom: 0;
   width: 90vw;
   min-height: 90vh;
@@ -626,6 +699,7 @@ header {
   border-radius: 5px;
   padding: 30px;
   box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
+  display: none;
 }
 
 .popup h3 {

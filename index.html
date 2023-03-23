@@ -46,30 +46,40 @@
         <div class="multipleSection1 flexRowDisplaysc">
           <!-- <button></button> -->
         </div>
-        <div class="ContentdivSection1 flexRowDisplaysbs">
+        <div class="ContentdivSection1">
           <div class="leftDivSection1 flexColDisplaysc">
             <div class="elementSec1">
               <h3 class="flexRowDisplaysc">Tytuł utworu</h3>
               <div class="fastPlayMode flexRowDisplaysc">
-                <audio controls>
+                <!-- <audio controls>
                   <source
                     src="elements/element1/Willow-–-Jasmine-Thompson-Wedding-Dance-Choreography.mp3"
                     type="audio/ogg"
                   />
                   Your browser does not support the audio element.
-                </audio>
+                </audio> -->
               </div>
-              <button class="chechOutButton flexColDisplaycc">
+              <button id="openRightPanel" class="chechOutButton flexColDisplaycc">
                 <img src="img/right.png" alt="Expand" />
               </button>
               <div class="checkFIlesInEl flexRowDisplaycc">
                 <img src="img/pdf.png" alt="PDF" />
                 <img src="img/png.png" alt="PNG" />
               </div>
-            </div>
+            </div>            
+            
           </div>
           <div class="rightDivSection1">
             <h3 class="flexRowDisplaysc">Tytuł utworu</h3>
+            <div class="rightPagechanger1 flexRowDisplaycc">
+              <button
+                type="button"
+                id="exitButtonRight"
+                title="Zamknij"
+              >
+                <img src="img/cancel1.png" alt="Close" />
+              </button>
+            </div>
             <div class="playVoiceDiv">
               <!-- Audio player  -->
               <div class="question">
@@ -215,7 +225,7 @@
       </div>
     </section>
 
-    <!-- <div class="popup">
+    <div class="popup">
       <h3>Upload file...</h3>
       <form class="uploadform" action="#">
         <input class="file-input" type="file" name="file" hidden />
@@ -224,13 +234,13 @@
       </form>
       <section class="progress-area"></section>
       <section class="uploaded-area"></section>
-    </div> -->
+    </div>
 
     <!-- <script src="JSfiles/pdf2.js"></script> -->
     <!-- <script src="script3.js"></script> -->
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="scriptPDF.js"></script>
     <script src="scriptMusic.js"></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
   </body>
 </html>

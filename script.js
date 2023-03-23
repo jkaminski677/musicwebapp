@@ -5,7 +5,7 @@ progressArea = document.querySelector(".progress-area"),
 uploadedArea = document.querySelector(".uploaded-area");
 const png = ['png', 'jpeg', 'jpg', 'gif', 'tiff', 'psd', 'pdf', 'esp', 'ai', 'jfif', 'raw'];
 const video = ['mp4', 'webm', 'mkv', 'flv', 'vob', 'ogv', 'ogg', 'drc', 'gif', 'gifv', 'mng', 'avi', 'mov', 'gt', 'wmv', 'asf', ];
-const audio = ['3gp', 'aa', 'aac', 'aax', 'act', 'dvf', 'm4a', 'm4b', 'm4p', 'mp3', 'mpc', 'wav', 'wma', 'wv', 'webm', '8svx'];
+const audioFormat = ['3gp', 'aa', 'aac', 'aax', 'act', 'dvf', 'm4a', 'm4b', 'm4p', 'mp3', 'mpc', 'wav', 'wma', 'wv', 'webm', '8svx'];
 const pdf = ['pdf', 'txt']
 
 // check ip addres
@@ -90,7 +90,7 @@ function fileTypeCheck(fileName){
   str = str.substring(str.length - 5, str.length);
   const foundPNG = png.some(r=> str.indexOf(r) >= 0)
   const foundVIDEO = video.some(r=> str.indexOf(r) >= 0)
-  const foundAUDIO = audio.some(r=> str.indexOf(r) >= 0)
+  const foundAUDIO = audioForma.some(r=> str.indexOf(r) >= 0)
   const foundPDF = pdf.some(r=> str.indexOf(r) >= 0)
 
   if(foundPNG){
@@ -117,5 +117,31 @@ function fileTypeCheck(fileName){
 
 
 
+// Open right side
 
+const toggleBtn = document.getElementById('openRightPanel');
+const expandElement = document.querySelector('.rightDivSection1');
+const leftDivSection1 = document.querySelector('.leftDivSection1');
+const exitButtonRight = document.querySelector('#exitButtonRight');
+
+
+var openClose = false;
+
+toggleBtn.addEventListener('click', function() {
+  openClose = !openClose
+  expandElement.classList.toggle('active'); /* dodajemy lub usuwamy klasę 'active' */
+  if(window.innerWidth < 751 && openClose) {
+    // leftDivSection1.style.display = "none";
+    leftDivSection1.classList.toggle('active'); /* dodajemy lub usuwamy klasę 'active' */
+
+  }
+});
+
+exitButtonRight.addEventListener('click', function() {
+  openClose = !openClose
+  expandElement.classList.toggle('active'); /* dodajemy lub usuwamy klasę 'active' */
+  if(window.innerWidth < 751 && !openClose) {
+    leftDivSection1.classList.toggle('active'); /* dodajemy lub usuwamy klasę 'active' */
+  }
+});
 

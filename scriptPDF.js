@@ -257,6 +257,6 @@ function OnlyPDFfun() {
 }
 
 function RemoveChildPDF() {
-  onlyPDF.removeChild(thisScale);
+  // onlyPDF.removeChild(thisScale);
 }
 
