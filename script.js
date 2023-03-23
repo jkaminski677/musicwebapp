@@ -133,7 +133,8 @@ toggleBtn.addEventListener('click', function() {
   if(window.innerWidth < 751 && openClose) {
     // leftDivSection1.style.display = "none";
     leftDivSection1.classList.toggle('active'); /* dodajemy lub usuwamy klasę 'active' */
-
+    expandElement.style.margin = "0";
+    // leftDivSection1.style.right = "-200%"
   }
 });
 
@@ -142,6 +143,8 @@ exitButtonRight.addEventListener('click', function() {
   expandElement.classList.toggle('active'); /* dodajemy lub usuwamy klasę 'active' */
   if(window.innerWidth < 751 && !openClose) {
     leftDivSection1.classList.toggle('active'); /* dodajemy lub usuwamy klasę 'active' */
+    // leftDivSection1.style.right = "0%"
+    expandElement.style.margin = "0";
   }
 });
 
