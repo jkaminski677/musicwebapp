@@ -123,6 +123,10 @@ const toggleBtn = document.getElementById('openRightPanel');
 const expandElement = document.querySelector('.rightDivSection1');
 const leftDivSection1 = document.querySelector('.leftDivSection1');
 const exitButtonRight = document.querySelector('#exitButtonRight');
+const hidebutton = document.querySelector('#hidebutton');
+const fukyou = document.querySelector('.fuk-you');
+
+
 
 
 var openClose = false;
@@ -148,3 +152,8 @@ exitButtonRight.addEventListener('click', function() {
   }
 });
 
+var openhiddenbyt = false;
+hidebutton.addEventListener('click', function() {
+  openhiddenbyt = !openhiddenbyt
+  fukyou.classList.toggle('active'); /* dodajemy lub usuwamy klasę 'active' */
+});

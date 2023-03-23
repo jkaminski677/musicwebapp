@@ -240,11 +240,11 @@ header {
   animation:scale0 0.5s ease-out;
   scale: 0;
 }
-@keyframes animateright
+/* @keyframes animateright
 {
     from {right:0;opacity:1} 
     to{right:-200%;opacity:0}
-}
+} */
 @keyframes scale0
 {
     from {scale: 1;} 
@@ -838,4 +838,39 @@ section .details span {
 }
 .uploaded-area i.fa-check {
   font-size: 16px;
+}
+
+
+#hidebutton {
+  width: 200px;
+  height: 100px;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor:default;
+}
+.fuk-you{
+  margin-bottom: 400px;
+  padding: 30px;
+  width: 100%;
+  min-height: 300px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1000px;
+  left: -200%;
+  transition: left 0.5s ease-in-out;
+}
+
+.fuk-you.active {
+  /* po kliknięciu przycisku element zostanie przesunięty w prawo */
+  left: 0; 
+  animation:animateleft 0.5s ease-out;
+}
+@keyframes animateleft
+{
+    from {left:-200%;opacity:0} 
+    to{left:0;opacity:1}
 }
