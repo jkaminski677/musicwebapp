@@ -82,8 +82,7 @@ LoopTags.addEventListener("click", function () {
         LoopTags.style.transform = 'scale(1.5)';
         audio.currentTime = startZn;
     } else {
-        LoopTags.style.filter = "invert(86%) sepia(82%) saturate(5129%) hue-rotate(173deg) brightness(105%) contrast(105%)";
-        LoopTags.style.transform = 'scale(1)'
+      ResetLoopTagsButton();
     }
   }
 });
@@ -94,7 +93,14 @@ resetZn.addEventListener("click", function () {
   startZn = 0;
   endZn = 0;
   loopZn = false;
+  ResetLoopTagsButton();
 });
+
+function ResetLoopTagsButton() {
+  LoopTags.style.filter = "invert(86%) sepia(82%) saturate(5129%) hue-rotate(173deg) brightness(105%) contrast(105%)";
+  LoopTags.style.transform = 'scale(1)';
+  loopZn = false;
+}
 
 function playAudio() {
   audio.play();
@@ -120,6 +126,7 @@ function stopAudio() {
   loopZn = false;
   PlayPause = true;
   playButtonImg.src = "img/play-button.png";
+  ResetLoopTagsButton();
 }
 
 function updateProgress() {
