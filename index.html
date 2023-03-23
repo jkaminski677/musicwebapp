@@ -78,38 +78,38 @@
                   <button class="question-toggle">Otwórz</button>
                 </div>
                 <div class="question-content">
-                  <div class="container1">
+                  <div class="container1 flexColDisplaycc">
                       <h1 class="title">Odtwarzacz muzyki</h1>
                       <div class="player">
                         <audio id="audio" src="../elements/element2/Rainbows.mp3"></audio>
-                        <div class="controlAudio flexRowDisplaysc">
+                        <div class="controlAudio flexRowDisplaysac">
                           <div class="controls">
-                            <button id="play" class="control-btn"><img src="img/play-button.png" alt=""></button>
-                            <button id="pause" class="control-btn"><img src="img/pause.png" alt=""></button>
+                            <button id="play" class="control-btn"><img id="playButtonImg" src="img/play-button.png" alt=""></button>
                             <button id="stop" class="control-btn"><img src="img/stop.png" alt=""></button>
                           </div>
                           <div class="volume-container">
                             <!-- <label for="volume">Głośność:</label> -->
-                            <img src="img/medium-volume.png" alt="">
-                            <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+                            <img id="volumeImg" src="img/max-volume.png" alt="">
+                            <input id="volume" class="styleInputAudioVolume" type="range" min="0" max="1" step="0.01" value="1">
                           </div>
-                          <div class="loop-container">
-                            <label for="loop">Zapętlenie utworu:</label>
-                            <input id="loop" type="checkbox">
+                          <div class="loop-container flexColDisplaycc">
+                            <button id="toggleBtn"><img id="toggleBtnImg" src="img/no-repeat2.png" alt=""></button>
                           </div>
-                          <button id="markStart">Znacznik początku</button>
-                          <button id="markEnd">Znacznik końca</button>
-                          <button id="loopZn">Zapętlenie znaczników</button>
-                          <button id="resetZn">Usuń znaczniki</button>
+                          <div class="musicTags flexRowDisplaycc">
+                            <button id="markStart" class="tagoftrack"><img src="img/tagBlackStart.png" alt=""></button>
+                            <button id="loopZn" class="tagoftrack"><img id="LoopImg" src="img/repeat.png" alt=""></button>
+                            <button id="markEnd" class="tagoftrack"><img src="img/tagBlackEnd.png" alt=""></button>
+                            <button id="resetZn" class="tagoftrack">Usuń znaczniki</button>
+                          </div>
                           <div id="music-player-time">
                             <span id="current-time">0:00</span> / <span id="duration">0:00</span>
                           </div>
                         </div>
                         
                         <div class="progress-container">
-                          <input id="progress" type="range" min="0" max="100" step="0.01" value="0">
-                          <div class="progress-bar__marker progress-bar__marker--start"></div>
-                          <div class="progress-bar__marker progress-bar__marker--end"></div>
+                          <input id="progress" class="styleInputAudio" type="range" min="0" max="100" step="0.01" value="0">
+                          <div class="progress-bar__marker progress-bar__marker--start"><img src="img/tagStart1.png" alt=""></div>
+                          <div class="progress-bar__marker progress-bar__marker--end"><img src="img/tagEnd1.png" alt=""></div>
                         </div>
                         
                         
