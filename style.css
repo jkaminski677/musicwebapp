@@ -224,7 +224,7 @@ header {
 }
 
 .fastPlayMode {
-  /* border: 2px solid peru; */
+  border: 2px solid peru;
   grid-column: 1 / 3;
   grid-row: 2 / 2;
 }

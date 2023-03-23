@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odtwarzacz muzyki</title>
+  <style>
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .controls {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .control-btn {
+      font-size: 20px;
+      margin: 0 10px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .progress-container {
+      width: 100%;
+    }
+
+    #progress {
+      width: 100%;
+    }
+
+    .volume-container {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .volume-container label {
+      margin-right: 10px;
+    }
+
+    #music-player-time {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    #current-time,
+    #duration {
+      margin: 0 5px;
+    }
+
+  </style>
+</head>
+<body>
+  
+      <div class="container">
+        <h1 class="title">Odtwarzacz muzyki</h1>
+        <div class="player">
+          <audio id="audio" src="../elements/element2/Rainbows.mp3"></audio>
+          <div class="controls">
+            <button id="play" class="control-btn">&#9658;</button>
+            <button id="pause" class="control-btn">&#10074;&#10074;</button>
+            <button id="stop" class="control-btn">&#9724;</button>
+          </div>
+          <div class="progress-container">
+            <input id="progress" type="range" min="0" max="100" step="0.01" value="0">
+          </div>
+          <div id="music-player-time">
+            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+          </div>
+          <div class="volume-container">
+            <label for="volume">Głośność:</label>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+          </div>
+          <div class="loop-container">
+            <label for="loop">Zapętlenie utworu:</label>
+            <input id="loop" type="checkbox">
+          </div>
+        </div>
+      </div>
+
+  
+  
+    <script>
+        const audio = document.getElementById('audio');
+        const playBtn = document.getElementById('play');
+        const pauseBtn = document.getElementById('pause');
+        const stopBtn = document.getElementById('stop');
+        const loopCheckbox = document.getElementById('loop');
+        const progress = document.getElementById('progress');
+        const volumeSlider = document.getElementById('volume');
+
+
+        function playAudio() {
+          audio.play();
+        }
+
+        function pauseAudio() {
+          audio.pause();
+        }
+
+        function stopAudio() {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+
+        function loopAudio() {
+          audio.loop = loopCheckbox.checked;
+        }
+
+        function updateProgress() {
+          const value = (audio.currentTime / audio.duration) * 100;
+          progress.value = value;
+        }
+
+        function setProgress() {
+          audio.currentTime = (progress.value / 100) * audio.duration;
+        }
+
+        function setVolume() {
+          audio.volume = volumeSlider.value;
+        }
+
+
+        // Event listeners
+        playBtn.addEventListener('click', playAudio);
+        pauseBtn.addEventListener('click', pauseAudio);
+        stopBtn.addEventListener('click', stopAudio);
+        loopCheckbox.addEventListener('change', loopAudio);
+        audio.addEventListener('timeupdate', updateProgress);
+        progress.addEventListener('change', setProgress);
+        volumeSlider.addEventListener('input', setVolume);
+
+        // const audio = document.querySelector('#music-player audio');
+        const duration = document.querySelector('#duration');
+        const currentTime = document.querySelector('#current-time');
+
+        audio.addEventListener('loadedmetadata', () => {
+          const time = formatTime(audio.duration);
+          duration.textContent = time;
+        });
+
+        audio.addEventListener('timeupdate', () => {
+          const time = formatTime(audio.currentTime);
+          currentTime.textContent = time;
+        });
+
+        function formatTime(time) {
+          const minutes = Math.floor(time / 60);
+          const seconds = Math.floor(time % 60);
+          return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+
+
+    </script>
+    
+</body>
+</html>
+
+  

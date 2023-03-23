@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odtwarzacz muzyki</title>
+  <style>
+    .question {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.question-header h3 {
+  margin: 0;
+}
+
+.question-toggle {
+  background-color: #f7f7f7;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.question-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  padding: 0 1rem;
+}
+
+.question.open .question-content {
+  max-height: 500px;
+  transition: max-height 0.3s ease-in;
+}
+
+
+  </style>
+</head>
+<body>
+  
+    <div class="question">
+        <div class="question-header">
+          <h3>Pytanie</h3>
+          <button class="question-toggle">Otwórz</button>
+        </div>
+        <div class="question-content">
+          <p>Odpowiedź na pytanie</p>
+        </div>
+      </div>
+      
+
+  
+  
+    <script>
+        const questionToggles = document.querySelectorAll('.question-toggle');
+
+        questionToggles.forEach((toggle) => {
+        toggle.addEventListener('click', (event) => {
+            const question = event.target.closest('.question');
+            question.classList.toggle('open');
+        });
+        });
+
+    </script>
+    
+</body>
+</html>
+
+  

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odtwarzacz muzyki</title>
+  <style>
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.hide {
+  display: none;
+}
+
+#music-player-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: slideIn 0.5s forwards;
+}
+
+#music-player-expanded {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+}
+
+#music-player-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#music-player-close {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#music-player-body {
+  padding: 10px;
+}
+
+  </style>
+</head>
+<body>
+  
+    <div id="music-player-container" class="center">
+        <button id="music-player-toggle">Odtwarzacz</button>
+        <div id="music-player">
+          <!-- kod odtwarzacza -->
+          gfcjhgjh
+        </div>
+      </div>
+      
+      <div id="music-player-wrapper" class="hide">
+        <div id="music-player-expanded">
+          <div id="music-player-header">
+            <button id="music-player-close">X</button>
+          </div>
+          <div id="music-player-body">
+            <!-- kod odtwarzacza -->
+            siema
+          </div>
+        </div>
+      </div>
+      
+
+  
+  
+    <script>
+        const musicPlayerWrapper = document.querySelector('#music-player-wrapper');
+        const musicPlayerToggle = document.querySelector('#music-player-toggle');
+        const musicPlayerClose = document.querySelector('#music-player-close');
+
+        function showMusicPlayer() {
+        musicPlayerWrapper.classList.remove('hide');
+        }
+
+        function hideMusicPlayer() {
+        musicPlayerWrapper.classList.add('hide');
+        }
+
+        musicPlayerToggle.addEventListener('click', showMusicPlayer);
+        musicPlayerClose.addEventListener('click', hideMusicPlayer);
+
+
+    </script>
+    
+</body>
+</html>
+
+  
