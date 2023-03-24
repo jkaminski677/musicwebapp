@@ -108,7 +108,6 @@
 @media screen and (max-width: 600px) {
   .insidepopup {
     width: 97%;
-    height: 97%;
   }
   .inareyousure h5 {
     font-size: 17px;
@@ -214,17 +213,20 @@
   margin: 20px;
 }
 
-
 @media screen and (max-width: 850px) {
-    .admusicBody{
-        flex-direction: column;
-    }
-    .righAdSong {
-        width: 100%;
-    }
-    .leftAdSong {
-        width: 100%;
-      }
+  .admusicBody {
+    flex-direction: column;
+  }
+  .righAdSong {
+    width: 100%;
+  }
+  .leftAdSong {
+    width: 100%;
+  }
+}
+
+#PdfInput{
+    margin: 20px;
 }
 
 /* //////////////// END AdSond Popup ///////////////// */

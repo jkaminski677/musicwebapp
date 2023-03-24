@@ -412,34 +412,37 @@
                 <ul id="audio-list"></ul>
               </div>
               <div class="downRightSong">
-                              
-              <!-- <label for="category">Wybierz głos:</label> -->
-              <select id="categoryPdf" name="categoryPdf" required>
-                <option value="">Wybierz kategorię.. .</option>
-                <option value="wszystkieGlosy">Tylko głosy</option>
-                <option value="instumental">Instrumetny</option>
-                <option value="całeNuty">Całe nuty</option>
-                <option value="soprano">Soprano</option>
-                <option value="alto">Alto</option>
-                <option value="tenor">Tenor</option>
-                <option value="bass">Bass</option>
-                
+                <div class="selectpdf flexRowDisplaycc">
+                  <!-- <label for="category">Wybierz głos:</label> -->
+                  <select id="categoryPdf" name="categoryPdf" required>
+                    <option value="">Wybierz kategorię.. .</option>
+                    <option value="wszystkieGlosy">Tylko głosy</option>
+                    <option value="instumental">Instrumetny</option>
+                    <option value="całeNuty">Całe nuty</option>
+                    <option value="soprano">Soprano</option>
+                    <option value="alto">Alto</option>
+                    <option value="tenor">Tenor</option>
+                    <option value="bass">Bass</option>
+                    
 
-              </select>
+                  </select>
 
         
-              <!-- <label for="audio">Audio file:</label> -->
-              <input type="file" id="PdfInput" name="pdf" accept=".pdf,image/*" required />
-              <!-- <div class="uploadFiles">
-                <h3>Upload file...</h3>
-                <form class="uploadform">
-                  <input class="file-input" type="file" id="audioInput" name="audio" accept="pdf/*" required />
-                  <i class="fas fa-cloud-upload-alt"></i>
-                  <p>Browse File to Upload</p>
-                </form>
-                <section class="progress-area"></section>
-                <section class="uploaded-area"></section>
-              </div> -->
+                  <!-- <label for="audio">Audio file:</label> -->
+                  <input type="file" id="PdfInput" name="pdf" accept=".pdf,image/*" required />
+                  <!-- <div class="uploadFiles">
+                    <h3>Upload file...</h3>
+                    <form class="uploadform">
+                      <input class="file-input" type="file" id="audioInput" name="audio" accept="pdf/*" required />
+                      <i class="fas fa-cloud-upload-alt"></i>
+                      <p>Browse File to Upload</p>
+                    </form>
+                    <section class="progress-area"></section>
+                    <section class="uploaded-area"></section>
+                  </div> -->
+
+                </div>
+              
         
               <button class="buttonAddPdf whiteButton" type="button" onclick="addPdf()">Add pdf</button>
               <ul id="pdf-list"></ul>
