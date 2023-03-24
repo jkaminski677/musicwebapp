@@ -116,7 +116,7 @@ header {
 }
 
 .topnav {
-  margin: 100px 0 80px 0;
+  margin: 100px 0 70px 0;
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -192,16 +192,52 @@ header {
 }
 
 .multipleSection1 {
-  width: 90%;
-  margin-bottom: 30px;
+  width: 95%;
+  margin-bottom: 70px;
+  /* border: 2px solid peru; */
+  flex-wrap:nowrap;
+}
+.categoryButtons{
+  width: 70%;
+  /* border: 2px solid peru; */
+  flex-wrap:wrap;
+}
+
+
+.whiteButton {
+  border: 2px solid rgb(255, 255, 255);
+  text-align: center;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  /* position: relative; */
+  margin: 10px;
+  background: none;
+  color: rgb(248, 248, 248);
+  transition: 0.1s;
+  padding: 10px 20px;
+}
+
+.whiteButton:hover {
+  transform: scale(1.03);
+}
+.whiteButton:active {
+  transform: scale(1.09);
+}
+
+
+.addSong{
+  width: 25%;
   /* border: 2px solid peru; */
 }
 
-.buttonSec1 {
-  width: 100px;
-  height: 20px;
-  margin: 0 20px 0 0;
+
+@media screen and (max-width: 600px) {
+  .whiteButton {
+    padding: 10px 15px;
+  }
 }
+
 .ContentdivSection1 {
   height: auto;
   width: 95%;
@@ -722,122 +758,6 @@ header {
 .deletettrackButton {
   width: 20%;
   min-width: 140px;
-}
-
-/* ////////////////// PUPUP add music /////////////////// */
-::selection {
-  color: #fff;
-  background: #6990f2;
-}
-.popup {
-  /* visibility: hidden; */
-  bottom: 0;
-  width: 90vw;
-  min-height: 90vh;
-  background: #fff;
-  border-radius: 5px;
-  padding: 30px;
-  box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
-  display: none;
-}
-
-.popup h3 {
-  color: #6990f2;
-  font-size: 27px;
-  font-weight: 600;
-  text-align: center;
-}
-.popup .uploadform {
-  height: 167px;
-  display: flex;
-  cursor: pointer;
-  margin: 30px 0;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 5px;
-  border: 2px dashed #6990f2;
-}
-.uploadform :where(i, p) {
-  color: #6990f2;
-}
-.uploadform i {
-  font-size: 50px;
-}
-.uploadform p {
-  margin-top: 15px;
-  font-size: 16px;
-}
-
-/* .form.active{
-  border: 2px solid #fff;
-} */
-
-section .row {
-  margin-bottom: 10px;
-  background: #e9f0ff;
-  list-style: none;
-  padding: 15px 20px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-section .row i {
-  color: #6990f2;
-  font-size: 30px;
-}
-section .details span {
-  font-size: 14px;
-}
-.progress-area .row .content {
-  width: 100%;
-  margin-left: 15px;
-}
-.progress-area .details {
-  display: flex;
-  align-items: center;
-  margin-bottom: 7px;
-  justify-content: space-between;
-}
-.progress-area .content .progress-bar {
-  height: 6px;
-  width: 100%;
-  margin-bottom: 4px;
-  background: #fff;
-  border-radius: 30px;
-}
-.content .progress-bar .progress {
-  height: 100%;
-  width: 0%;
-  background: #6990f2;
-  border-radius: inherit;
-}
-.uploaded-area {
-  max-height: 232px;
-  overflow-y: scroll;
-}
-.uploaded-area.onprogress {
-  max-height: 150px;
-}
-.uploaded-area::-webkit-scrollbar {
-  width: 0px;
-}
-.uploaded-area .row .content {
-  display: flex;
-  align-items: center;
-}
-.uploaded-area .row .details {
-  display: flex;
-  margin-left: 15px;
-  flex-direction: column;
-}
-.uploaded-area .row .details .size {
-  color: #404040;
-  font-size: 11px;
-}
-.uploaded-area i.fa-check {
-  font-size: 16px;
 }
 
 

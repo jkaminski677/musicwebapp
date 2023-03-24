@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Odtwarzacz muzyki</title>
+    <style>
+      .container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+
+      #toggle-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+
+      #PopupContent {
+        border: 2px solid peru;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0; /* ustawiamy wysokość początkową na 0 */
+        background-color: rgba(0, 0, 0, 0.616);
+        overflow: hidden; /* ukrywamy zawartość elementu */
+        transform: translateY(-100%); /* przesuwamy element poza ekran */
+        transition: height 0.3s ease-out, transform 0.3s ease-out; /* dodajemy animację */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #PopupContent.active {
+        height: 100%; /* zwiększamy wysokość na 100% */
+        transform: translateY(0); /* przesuwamy element na górę ekranu */
+      }
+
+      .insidepopup {
+        border: 2px solid peru;
+        width: 80%;
+        height: 80%;
+      }
+
+      #PopupCloseButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="AddSongButton">Kliknij, aby rozwijać</button>
+      <div id="PopupContent">
+        <button id="PopupCloseButton">Kliknij, aby zwijać</button>
+        <div class="insidepopup">
+            no siema
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const AddSongButton = document.getElementById("AddSongButton");
+      const PopupContent = document.getElementById("PopupContent");
+      const v = document.getElementById("PopupCloseButton");
+      const body = document.querySelector("body");
+      var isPopupOn = false;
+
+      AddSongButton.addEventListener("click", function () {
+        isPopupOnOff();
+        PopupContent.classList.add("active"); /* dodaje klasę 'active' */
+      });
+
+      PopupCloseButton.addEventListener("click", function () {
+        isPopupOnOff();
+        PopupContent.classList.remove("active"); /* usuwa klasę 'active' */
+      });
+
+      PopupContent.addEventListener("click", function (event) {
+        if (event.target === this) {
+            isPopupOnOff();
+            PopupContent.classList.remove(
+            "active"
+          ); /* usuwa klasę 'active' po kliknięciu w tło */
+        }
+      });
+
+      function isPopupOnOff() {
+        isPopupOn = !isPopupOn;
+        if (isPopupOn) {
+          body.style.overflow = "hidden";
+        } else {
+          body.style.overflow = "auto";
+        }
+      }
+    </script>
+  </body>
+</html>

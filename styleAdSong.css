@@ -1,0 +1,246 @@
+/* //////////////// AdSond Popup ///////////////// */
+
+#PopupContent {
+  /* border: 2px solid peru; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* ustawiamy wysokość początkową na 0 */
+  background-color: rgba(0, 0, 0, 0.616);
+  overflow: hidden; /* ukrywamy zawartość elementu */
+  transform: translateY(-100%); /* przesuwamy element poza ekran */
+  transition: height 0.3s ease-out, transform 0.3s ease-out; /* dodajemy animację */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#PopupContent.active {
+  height: 100%; /* zwiększamy wysokość na 100% */
+  transform: translateY(0); /* przesuwamy element na górę ekranu */
+}
+
+.insidepopup {
+  /* border: 2px solid peru; */
+  width: 90%;
+  height: 90%;
+  padding: 20px;
+  background-image: linear-gradient(
+    to left top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+  border-radius: 20px;
+}
+
+#PopupCloseButton {
+  /* position: absolute;
+    top: 20px;
+    right: 20px; */
+}
+
+#AreYouSure {
+  /* border: 2px solid peru; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* ustawiamy wysokość początkową na 0 */
+  /* border: 2px solid peru; */
+  background-color: rgba(0, 0, 0, 0.616);
+  overflow: hidden; /* ukrywamy zawartość elementu */
+  transform: translateY(-100%); /* przesuwamy element poza ekran */
+  transition: height 0.3s ease-out, transform 0.3s ease-out; /* dodajemy animację */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#AreYouSure.active {
+  height: 100%; /* zwiększamy wysokość na 100% */
+  transform: translateY(0); /* przesuwamy element na górę ekranu */
+}
+
+#AreYouSureButton {
+  /* position: absolute;
+    top: 20px;
+    right: 20px; */
+}
+
+.inareyousure {
+  width: 50%;
+  height: 50%;
+  background-image: linear-gradient(
+    to left top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+  border-radius: 20px;
+  /* border: 2px solid peru; */
+  padding: 20px;
+}
+
+.inareyousure h5 {
+    /* border: 2px solid peru; */
+    font-size: 25px;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 600px) {
+    .insidepopup{
+        width: 97%;
+        height: 97%;
+    }
+    .inareyousure h5 {
+        font-size: 17px;
+    }
+    .inareyousure {
+        width: 90%;
+        height: 70%;
+  }
+}
+
+/* //////////////// END AdSond Popup ///////////////// */
+
+/* ////////////////// PUPUP music /////////////////// */
+::selection {
+  color: #fff;
+  background: #6990f2;
+}
+.uploadFiles {
+  /* visibility: hidden; */
+  bottom: 0;
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+.uploadFiles h3 {
+  color: #6990f2;
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center;
+}
+.uploadFiles .uploadform {
+  height: 167px;
+  display: flex;
+  cursor: pointer;
+  margin: 30px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed #6990f2;
+}
+.uploadform :where(i, p) {
+  color: #6990f2;
+}
+.uploadform i {
+  font-size: 50px;
+}
+.uploadform p {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.file-input {
+  visibility: hidden;
+}
+
+/* .form.active{
+    border: 2px solid #fff;
+  } */
+
+section .row {
+  margin-bottom: 10px;
+  background: #e9f0ff;
+  list-style: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section .row i {
+  color: #6990f2;
+  font-size: 30px;
+}
+section .details span {
+  font-size: 14px;
+}
+.progress-area .row .content {
+  width: 100%;
+  margin-left: 15px;
+}
+.progress-area .details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+.progress-area .content .progress-bar {
+  height: 6px;
+  width: 100%;
+  margin-bottom: 4px;
+  background: #fff;
+  border-radius: 30px;
+}
+.content .progress-bar .progress {
+  height: 100%;
+  width: 0%;
+  background: #6990f2;
+  border-radius: inherit;
+}
+.uploaded-area {
+  max-height: 232px;
+  overflow-y: scroll;
+}
+.uploaded-area.onprogress {
+  max-height: 150px;
+}
+.uploaded-area::-webkit-scrollbar {
+  width: 0px;
+}
+.uploaded-area .row .content {
+  display: flex;
+  align-items: center;
+}
+.uploaded-area .row .details {
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+.uploaded-area .row .details .size {
+  color: #404040;
+  font-size: 11px;
+}
+.uploaded-area i.fa-check {
+  font-size: 16px;
+}

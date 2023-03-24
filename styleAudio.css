@@ -405,6 +405,8 @@ input[id=progress]:focus::-ms-fill-upper {
   margin-left: 7px;
 }
 
+/* ////////////////////// Unroll audio player /////////////////////// */
+
 .question {
   border: 1px solid #ccc;
   overflow: hidden;
@@ -452,3 +454,6 @@ input[id=progress]:focus::-ms-fill-upper {
   max-height: 500px;
   transition: max-height 0.3s ease-in;
 }
+
+
+/* /////////////// END Unroll audio player /////////////////*/

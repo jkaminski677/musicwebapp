@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="styleAudio.css" />
+    <link rel="stylesheet" href="styleAdSong.css" />
+
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
       rel="stylesheet"
@@ -43,9 +45,18 @@
     </header>
     <section class="section1 flexColDisplaysc">
       <div class="divSection1 flexColDisplaycc">
-        <div class="multipleSection1 flexRowDisplaysc">
-          <!-- <button></button> -->
+        <div class="multipleSection1 flexRowDisplaysac">
+          <div class="categoryButtons flexRowDisplaysac">
+            <button id="categoryButton" class="flexColDisplaycc whiteButton">uwielbienie</button>
+            <button id="categoryButton" class="flexColDisplaycc whiteButton">wejście</button>
+            <button id="categoryButton" class="flexColDisplaycc whiteButton">wesołe</button>
+            <button id="categoryButton" class="flexColDisplaycc whiteButton">wielki post</button>
+          </div>
+          <div class="addSong flexRowDisplaysac">
+            <button id="AddSongButton" class="flexColDisplaycc whiteButton">Add song</button>
+          </div>
         </div>
+        
         <div class="ContentdivSection1">
           <div class="leftDivSection1 flexColDisplaysc">
             <h3>Lista utworów</h3>
@@ -352,10 +363,31 @@
     </section>
     <button id="hidebutton"></button> 
     <div class="fuk-you"><h2>fuck you</h2></div>   
-    <div class="popup">
+
+    <!-- AddSong Popup -->
+    <div id="PopupContent">
+      <div class="insidepopup">
+        no siema
+        <button id="PopupCloseButton" class="whiteButton">Anuluj</button>
+      </div>
+    </div>
+    <!-- End AddSong Popup -->
+    <div id="AreYouSure">
+      <div class="inareyousure flexColDisplaycc">
+        <h5>Jeśli zamkniesz okno edycji, wszystkie zmiany zostaną usunięte. <br> <br> Na pewno chcesz wyjść?</h5>
+
+        <div class="flexRowDisplaycc">
+          <button id="AreYouSureButttonNo" class="whiteButton">Zostań</button>
+          <button id="AreYouSureButttonYes" class="whiteButton">Tak</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="uploadFiles">
       <h3>Upload file...</h3>
       <form class="uploadform" action="#">
-        <input class="file-input" type="file" name="file" hidden />
+        <input class="file-input" type="file" name="file" />
         <i class="fas fa-cloud-upload-alt"></i>
         <p>Browse File to Upload</p>
       </form>
