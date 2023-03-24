@@ -70,11 +70,6 @@
   transform: translateY(0); /* przesuwamy element na górę ekranu */
 }
 
-#AreYouSureButton {
-  /* position: absolute;
-    top: 20px;
-    right: 20px; */
-}
 
 .inareyousure {
   width: 50%;
