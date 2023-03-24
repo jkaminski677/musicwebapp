@@ -1,7 +1,7 @@
 /* //////////////// AdSond Popup ///////////////// */
 
 #PopupContent {
-  /* border: 2px solid peru; */
+  border: 2px solid peru;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,18 +13,21 @@
   transition: height 0.3s ease-out, transform 0.3s ease-out; /* dodajemy animację */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #PopupContent.active {
-  height: 100%; /* zwiększamy wysokość na 100% */
+  min-height: 100vh; /* zwiększamy wysokość na 100% */
   transform: translateY(0); /* przesuwamy element na górę ekranu */
+  overflow: auto;
+  padding: 20px 0;
 }
 
 .insidepopup {
   /* border: 2px solid peru; */
   width: 90%;
-  height: 90%;
+  min-height: 90%;
+  height: auto;
   padding: 20px;
   background-image: linear-gradient(
     to left top,
@@ -42,12 +45,6 @@
     #5ffbf1
   );
   border-radius: 20px;
-}
-
-#PopupCloseButton {
-  /* position: absolute;
-    top: 20px;
-    right: 20px; */
 }
 
 #AreYouSure {
@@ -103,47 +100,150 @@
 }
 
 .inareyousure h5 {
-    /* border: 2px solid peru; */
-    font-size: 25px;
-    text-align: center;
+  /* border: 2px solid peru; */
+  font-size: 25px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .insidepopup {
+    width: 97%;
+    height: 97%;
+  }
+  .inareyousure h5 {
+    font-size: 17px;
+  }
+  .inareyousure {
+    width: 90%;
+    height: 70%;
+  }
+}
+
+.admusicHead {
+  /* border: 2px solid peru; */
+  height: 70px;
+}
+
+.admusicHead h3 {
+  /* border: 2px solid peru; */
+  margin: 0;
+}
+
+.underAdsonHead {
+  /* border: 2px solid peru; */
+  width: 100%;
+  height: 90%;
+}
+
+.admusicBody {
+  margin: 20px 0;
+  padding: 20px;
+  width: 100%;
+  /* border: 2px solid peru; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.titleAdSong {
+  /* border: 2px solid peru; */
+}
+
+#title {
+  border-radius: 10px;
+  background: none;
+  width: 90%;
+  /* width: 200px; */
+  /* height: 50px; */
+  background: none;
+  border: 2px solid #b2d6f7;
+  outline: none;
+  padding: 10px 20px;
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.leftAdSong {
+  /* border: 2px solid peru; */
+  width: 50%;
+}
+
+#category {
+  border-radius: 10px;
+  background: none;
+  background: none;
+  border: 2px solid #b2d6f7;
+  outline: none;
+  padding: 10px 20px;
+  margin: 20px;
+}
+
+.buttonAddAudio {
+  margin: 20px;
+}
+
+.righAdSong {
+  /* border: 2px solid peru; */
+  width: 50%;
+  height: 100%;
+}
+
+.upRightSong {
+  width: 100%;
+  height: 50%;
+  /* border: 2px solid peru; */
+}
+
+.downRightSong {
+  width: 100%;
+  height: 50%;
+  /* border: 2px solid peru; */
+}
+
+#audio-list {
+  /* border: 2px solid peru; */
+}
+
+#categoryPdf {
+  border-radius: 10px;
+  background: none;
+  background: none;
+  border: 2px solid #b2d6f7;
+  outline: none;
+  padding: 10px 20px;
+  margin: 20px;
 }
 
 
-@media screen and (max-width: 600px) {
-    .insidepopup{
-        width: 97%;
-        height: 97%;
+@media screen and (max-width: 850px) {
+    .admusicBody{
+        flex-direction: column;
     }
-    .inareyousure h5 {
-        font-size: 17px;
+    .righAdSong {
+        width: 100%;
     }
-    .inareyousure {
-        width: 90%;
-        height: 70%;
-  }
+    .leftAdSong {
+        width: 100%;
+      }
 }
 
 /* //////////////// END AdSond Popup ///////////////// */
 
 /* ////////////////// PUPUP music /////////////////// */
-::selection {
-  color: #fff;
-  background: #6990f2;
-}
 .uploadFiles {
   /* visibility: hidden; */
   bottom: 0;
   width: 80%;
-  height: 80%;
-  background: #fff;
+  /* height: 80%; */
+  background: #ffffff;
   border-radius: 5px;
   padding: 30px;
   box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
-  display: none;
+  /* display: none; */
 }
 
 .uploadFiles h3 {
-  color: #6990f2;
+  color: #5781ec;
   font-size: 27px;
   font-weight: 600;
   text-align: center;
@@ -157,10 +257,10 @@
   justify-content: center;
   flex-direction: column;
   border-radius: 5px;
-  border: 2px dashed #6990f2;
+  border: 2px dashed #5781ec;
 }
 .uploadform :where(i, p) {
-  color: #6990f2;
+  color: #5781ec;
 }
 .uploadform i {
   font-size: 50px;

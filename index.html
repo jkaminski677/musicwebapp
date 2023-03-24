@@ -362,13 +362,95 @@
       </div>
     </section>
     <button id="hidebutton"></button> 
-    <div class="fuk-you"><h2>fuck you</h2></div>   
+    <div class="fuk-you flexColDisplaycc">
+      <h2>fuck you</h2>
+      <p>I have your ip address</p>
+      <h4 id="ip-addres-show"></h4>
+    </div>   
 
     <!-- AddSong Popup -->
     <div id="PopupContent">
       <div class="insidepopup">
-        no siema
-        <button id="PopupCloseButton" class="whiteButton">Anuluj</button>
+        <div class="admusicHead flexRowDisplaysbc">
+          <h3>Dodaj utwór</h3>
+          <button id="PopupCloseButton" class="whiteButton">Anuluj</button>
+        </div>
+        <div class="underAdsonHead flexColDisplaysc">
+          <input type="text" id="title" name="title" placeholder="Tytuł utworu..." required />
+          <div class="admusicBody">
+            <div class="leftAdSong flexColDisplaycc">
+                
+              <!-- <label for="category">Wybierz głos:</label> -->
+              <select id="category" name="category" required>
+                <option value="">Wybierz głos.. .</option>
+                <option value="soprano">Soprano</option>
+                <option value="alto">Alto</option>
+                <option value="tenor">Tenor</option>
+                <option value="bass">Bass</option>
+              </select>
+              <br />
+        
+              <!-- <label for="audio">Audio file:</label> -->
+              <!-- <input type="file" id="audioInput" name="audio" accept="audio/*" required /> -->
+              <div class="uploadFiles">
+                <h3>Upload file...</h3>
+                <form class="uploadform">
+                  <input class="file-input" type="file" id="audioInput" name="audio" accept="audio/*" required />
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p>Browse File to Upload</p>
+                </form>
+                <section class="progress-area"></section>
+                <section class="uploaded-area"></section>
+              </div>
+              <br />
+        
+              <button class="buttonAddAudio whiteButton" type="button" onclick="addAudio()">Add audio</button>
+            </div>
+            <div class="righAdSong flexColDisplaysc">
+              <div class="upRightSong">
+                <h4>Lista dodanych nagrań</h4>
+                <ul id="audio-list"></ul>
+              </div>
+              <div class="downRightSong">
+                              
+              <!-- <label for="category">Wybierz głos:</label> -->
+              <select id="categoryPdf" name="categoryPdf" required>
+                <option value="">Wybierz kategorię.. .</option>
+                <option value="wszystkieGlosy">Tylko głosy</option>
+                <option value="instumental">Instrumetny</option>
+                <option value="całeNuty">Całe nuty</option>
+                <option value="soprano">Soprano</option>
+                <option value="alto">Alto</option>
+                <option value="tenor">Tenor</option>
+                <option value="bass">Bass</option>
+                
+
+              </select>
+
+        
+              <!-- <label for="audio">Audio file:</label> -->
+              <input type="file" id="PdfInput" name="pdf" accept=".pdf,image/*" required />
+              <!-- <div class="uploadFiles">
+                <h3>Upload file...</h3>
+                <form class="uploadform">
+                  <input class="file-input" type="file" id="audioInput" name="audio" accept="pdf/*" required />
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p>Browse File to Upload</p>
+                </form>
+                <section class="progress-area"></section>
+                <section class="uploaded-area"></section>
+              </div> -->
+        
+              <button class="buttonAddPdf whiteButton" type="button" onclick="addPdf()">Add pdf</button>
+              <ul id="pdf-list"></ul>
+  
+            </div>
+            </div>
+          </div>
+
+        </div>
+        
+        
       </div>
     </div>
     <!-- End AddSong Popup -->
@@ -384,7 +466,7 @@
     </div>
 
 
-    <div class="uploadFiles">
+    <!-- <div class="uploadFiles">
       <h3>Upload file...</h3>
       <form class="uploadform" action="#">
         <input class="file-input" type="file" name="file" />
@@ -393,13 +475,14 @@
       </form>
       <section class="progress-area"></section>
       <section class="uploaded-area"></section>
-    </div>
+    </div> -->
 
     <!-- <script src="JSfiles/pdf2.js"></script> -->
     <!-- <script src="script3.js"></script> -->
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="scriptPDF.js"></script>
     <script src="scriptMusic.js"></script>
+    <script src="scriptAdSong.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
